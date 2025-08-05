@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-// Remove tabs import for custom implementation
+import { motion } from "framer-motion";
 import { wavePatterns } from "../utils/patterns";
 import { Pattern } from "../types/pattern";
 import { Copy, Check, Eye, Search, Filter, Sparkles, Star, X } from "lucide-react";
@@ -304,85 +304,113 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             )}
           </div>
 
-          {/* Category Filter Tabs - Animated Slide Effect */}
+          {/* Category Filter Tabs - Framer Motion Animated */}
           <div className="flex justify-center w-full">
-            <div className="inline-flex h-10 items-center justify-center rounded-xl bg-muted/50 backdrop-blur-sm border border-border/50 p-1 text-muted-foreground relative">
-              {/* Animated background slider */}
-              <div 
-                className="absolute top-1 bottom-1 bg-black dark:bg-white rounded-lg transition-all duration-300 ease-out shadow-sm"
-                style={{
-                  left: `${['all', 'gradients', 'geometric', 'decorative', 'effects', 'favorites'].indexOf(selectedCategory) * (100 / 6) + 0.25}%`,
-                  width: `${100 / 6 - 0.5}%`,
-                }}
-              />
+            <div className="inline-flex h-12 items-center justify-center rounded-xl bg-muted/70 backdrop-blur-md border border-border/30 p-1.5 text-muted-foreground relative gap-1.5">
+              {/* Framer Motion animated background with layoutId */}
+              {selectedCategory && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute top-1.5 bottom-1.5 bg-foreground dark:bg-white border border-border/20 rounded-lg shadow-lg"
+                  initial={false}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30,
+                    mass: 0.8,
+                  }}
+                  style={{
+                    left: `${['all', 'gradients', 'geometric', 'decorative', 'effects', 'favorites'].indexOf(selectedCategory) * (100 / 6) + 0.5}%`,
+                    width: `${100 / 6 - 1}%`,
+                  }}
+                />
+              )}
               
-              {/* Tab buttons */}
-              <button
+              {/* Tab buttons with enhanced animations */}
+              <motion.button
                 onClick={() => setSelectedCategory('all')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'all' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 All ({wavePatterns.length})
-              </button>
+              </motion.button>
               
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory('gradients')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'gradients' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Gradients ({categoryStats.gradients || 0})
-              </button>
+              </motion.button>
               
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory('geometric')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'geometric' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Geometric ({categoryStats.geometric || 0})
-              </button>
+              </motion.button>
               
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory('decorative')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'decorative' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Decorative ({categoryStats.decorative || 0})
-              </button>
+              </motion.button>
               
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory('effects')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'effects' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 Effects ({categoryStats.effects || 0})
-              </button>
+              </motion.button>
               
-              <button
+              <motion.button
                 onClick={() => setSelectedCategory('favorites')}
-                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
                   selectedCategory === 'favorites' 
-                    ? 'text-white dark:text-black' 
-                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                    ? 'text-background dark:text-black font-semibold' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
-                <Star className="h-4 w-4 mr-1" />
+                <Star className="h-4 w-4 mr-1.5" />
                 Favorites ({favorites.length})
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>

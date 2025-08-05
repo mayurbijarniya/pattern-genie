@@ -23,8 +23,7 @@ export default function Navbar({ theme }: NavbarProps) {
             height="20" 
             viewBox="0 0 24 24" 
             fill="none" 
-            className="flex-shrink-0 mt-[2px] h-6 w-6 sm:h-6 sm:w-6"
-            style={{ userSelect: "none" }}
+            className="flex-shrink-0 mt-[2px] h-6 w-6 sm:h-6 sm:w-6 select-none"
           >
             <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
             <path d="M20 18C21.1046 18 22 17.1046 22 16C22 14.8954 21.1046 14 20 14C18.8954 14 18 14.8954 18 16C18 17.1046 18.8954 18 20 18Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
