@@ -90,12 +90,12 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
     const isActive = _activePattern === pattern.id;
     
     return (
-    <div className={`group relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 ${
+    <div className={`group relative bg-card border rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 ${
       isActive ? 'border-black dark:border-white border-2' : 'border-border'
     }`}>
       {/* Pattern Preview */}
       <div 
-        className="h-32 w-full relative cursor-pointer"
+        className="h-48 sm:h-56 w-full relative cursor-pointer"
         style={pattern.style}
         onClick={() => previewPattern(pattern)}
         role="button"
@@ -103,61 +103,31 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
         onKeyDown={(e) => e.key === 'Enter' && previewPattern(pattern)}
         aria-label={`Preview ${pattern.name} pattern`}
       >
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <Button variant="secondary" size="sm">
-            <Eye className="h-4 w-4 mr-2" />
-            Preview
-          </Button>
-        </div>
-        
-        {/* Badge */}
-        {pattern.badge && (
-          <div className="absolute top-2 right-2">
-            <Badge variant={pattern.badge === "New" ? "default" : "secondary"}>
-              {pattern.badge}
-            </Badge>
-          </div>
-        )}
-      </div>
-
-      {/* Pattern Info */}
-      <div className="p-4">
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <h3 className="font-semibold text-foreground mb-1">{pattern.name}</h3>
-            {pattern.description && (
-              <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
-                {pattern.description}
-              </p>
-            )}
-            <Badge variant="outline" className="text-xs">
-              {pattern.category}
-            </Badge>
-          </div>
-        </div>
-
-        {/* Actions */}
-        <div className="flex gap-2 mt-4">
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1"
-            onClick={() => previewPattern(pattern)}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100">
+          <Button 
+            size="sm" 
+            className="bg-white text-black hover:bg-gray-100 border-0 shadow-lg font-medium px-6"
+            onClick={(e) => {
+              e.stopPropagation();
+              previewPattern(pattern);
+            }}
           >
             <Eye className="h-4 w-4 mr-2" />
             Preview
           </Button>
-          <Button
-            variant="default"
-            size="sm"
-            className="flex-1"
-            onClick={() => copyToClipboard(pattern)}
-            disabled={copiedId === pattern.id || isLoading}
+          <Button 
+            size="sm" 
+            variant="outline"
+            className="bg-black/80 text-white border-white/20 hover:bg-black font-medium px-6"
+            onClick={(e) => {
+              e.stopPropagation();
+              copyToClipboard(pattern);
+            }}
+            disabled={isLoading}
           >
             {copiedId === pattern.id ? (
               <>
-                <Check className="h-4 w-4 mr-2" />
+                <Check className="h-4 w-4 mr-2 text-green-400" />
                 Copied!
               </>
             ) : (
@@ -168,13 +138,36 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             )}
           </Button>
         </div>
+        
+        {/* Star Icon */}
+        <div className="absolute top-3 left-3 opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+            <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Badge */}
+        {pattern.badge && (
+          <div className="absolute top-3 right-3">
+            <Badge variant="secondary" className="bg-white/90 text-black border-0 text-xs font-medium backdrop-blur-sm">
+              ✨ {pattern.badge}
+            </Badge>
+          </div>
+        )}
+      </div>
+
+      {/* Pattern Info */}
+      <div className="p-4">
+        <h3 className="font-semibold text-foreground text-center">{pattern.name}</h3>
       </div>
     </div>
   );
 };
 
   return (
-    <section id="pattern-showcase" className="relative py-20 px-4 sm:px-6 lg:px-8">
+    <section id="pattern-showcase" className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -233,7 +226,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
         </div>
 
         {/* Pattern Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {filteredPatterns.map((pattern) => (
             <PatternCard key={pattern.id} pattern={pattern} />
           ))}

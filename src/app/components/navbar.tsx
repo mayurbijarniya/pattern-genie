@@ -11,11 +11,11 @@ export default function Navbar({ theme }: NavbarProps) {
   const isPatternDark = theme === "dark"
 
   return (
-    <nav className="w-full py-6">
+    <nav className="w-full py-4 sm:py-6">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
 
         <span
-          className={`flex items-center gap-[4px] sm:gap-[6px] font-bold tracking-tight transition-colors duration-300 text-lg sm:text-xl ${isPatternDark ? "text-white" : "text-neutral-800 dark:text-neutral-200"
+          className={`flex items-center gap-[4px] sm:gap-[6px] font-bold tracking-tight transition-colors duration-300 text-base sm:text-lg md:text-xl ${isPatternDark ? "text-white" : "text-neutral-800 dark:text-neutral-200"
             }`}
         >
           <Image

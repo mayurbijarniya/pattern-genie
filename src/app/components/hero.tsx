@@ -20,7 +20,7 @@ export default function Hero({ theme }: HeroProps) {
   const isPatternDark = theme === "dark";
 
   return (
-    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-18 text-center relative overflow-hidden px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-20 text-center relative overflow-hidden px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[80vh] sm:min-h-screen">
       <div className="mx-auto max-w-6xl relative z-10">
         {/* Badge */}
         <div className="mb-6 sm:mb-8 md:mb-10 flex justify-center">
@@ -54,7 +54,7 @@ export default function Hero({ theme }: HeroProps) {
 
         {/* Main heading */}
         <div className="mb-6 sm:mb-8">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-1 sm:mb-3">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-1 sm:mb-3">
             <span
               className={`font-medium transition-colors duration-300 ${
                 isPatternDark ? "text-white" : "text-gray-900 dark:text-gray-50"
@@ -63,7 +63,7 @@ export default function Hero({ theme }: HeroProps) {
               Beautiful Background
             </span>
           </h1>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">
             <span
               className={`bg-gradient-to-r bg-[200%_auto] bg-clip-text leading-tight text-transparent transition-all duration-300 ${
                 isPatternDark
@@ -78,7 +78,7 @@ export default function Hero({ theme }: HeroProps) {
 
         {/* Description */}
         <p
-          className={`text-base sm:text-lg mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed transition-colors duration-300 px-4 sm:px-0 ${
+          className={`text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-lg mx-auto leading-relaxed transition-colors duration-300 px-2 sm:px-0 ${
             isPatternDark ? "text-gray-200" : "text-gray-600 dark:text-gray-200"
           }`}
         >

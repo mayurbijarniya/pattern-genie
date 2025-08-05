@@ -30,17 +30,17 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 space-y-2">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex flex-col gap-2">
       {/* Return to Preview Button */}
       {activePattern && (
         <Button
           onClick={scrollToTop}
           variant="outline"
           size="sm"
-          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
+          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md min-w-0 sm:min-w-[140px]"
         >
-          <ArrowUp className="h-4 w-4 mr-2" />
-          Return to Preview
+          <ArrowUp className="h-4 w-4 sm:mr-2" />
+          <span className="hidden sm:inline">Return to Preview</span>
         </Button>
       )}
 
@@ -50,10 +50,10 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
           onClick={onReset}
           variant="outline"
           size="sm"
-          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
+          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md min-w-0 sm:min-w-[140px]"
         >
-          <X className="h-4 w-4 mr-2" />
-          Reset Preview
+          <X className="h-4 w-4 sm:mr-2" />
+          <span className="hidden sm:inline">Reset Preview</span>
         </Button>
       )}
 
