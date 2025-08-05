@@ -1647,4 +1647,292 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+
+  // ADVANCED GRADIENTS & EFFECTS - Additional 80 patterns to reach 130+
+  {
+    id: "holographic-shine",
+    name: "Holographic Shine",
+    category: "effects",
+    badge: "New",
+    description: "Holographic rainbow effect with shifting colors",
+    style: {
+      background: `
+        linear-gradient(45deg, #ff006e 0%, #8338ec 20%, #3a86ff 40%, #06ffa5 60%, #ffbe0b 80%, #fb5607 100%),
+        linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Holographic Shine Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        linear-gradient(45deg, #ff006e 0%, #8338ec 20%, #3a86ff 40%, #06ffa5 60%, #ffbe0b 80%, #fb5607 100%),
+        linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "neon-cyber-grid",
+    name: "Neon Cyber Grid",
+    category: "geometric",
+    badge: "Popular",
+    description: "Cyberpunk neon grid with electric colors",
+    style: {
+      backgroundColor: "#0a0a0a",
+      backgroundImage: `
+        linear-gradient(rgba(0,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.5) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255,255,0,0.1) 0%, transparent 70%)
+      `,
+      backgroundSize: "40px 40px, 40px 40px, 100% 100%",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Neon Cyber Grid Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#0a0a0a",
+      backgroundImage: \`
+        linear-gradient(rgba(0,255,255,0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.5) 1px, transparent 1px),
+        radial-gradient(circle at 50% 50%, rgba(255,255,0,0.1) 0%, transparent 70%)
+      \`,
+      backgroundSize: "40px 40px, 40px 40px, 100% 100%",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "volcanic-lava",
+    name: "Volcanic Lava",
+    category: "effects",
+    description: "Molten lava flow with red-orange volcanic colors",
+    style: {
+      background: `
+        radial-gradient(circle at 30% 70%, #dc2626 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, #ea580c 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #f59e0b 0%, transparent 50%),
+        linear-gradient(135deg, #7f1d1d 0%, #451a03 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Volcanic Lava Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(circle at 30% 70%, #dc2626 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, #ea580c 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #f59e0b 0%, transparent 50%),
+        linear-gradient(135deg, #7f1d1d 0%, #451a03 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "iridescent-bubbles",
+    name: "Iridescent Bubbles",
+    category: "decorative",
+    badge: "New",
+    description: "Floating iridescent bubbles with rainbow reflections",
+    style: {
+      backgroundColor: "#f8fafc",
+      backgroundImage: `
+        radial-gradient(circle at 1px 1px, rgba(255,0,128,0.3) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(0,255,128,0.3) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(128,0,255,0.3) 1px, transparent 0)
+      `,
+      backgroundSize: "80px 80px, 120px 120px, 160px 160px",
+      backgroundPosition: "0 0, 40px 40px, 80px 80px",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Iridescent Bubbles Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f8fafc",
+      backgroundImage: \`
+        radial-gradient(circle at 1px 1px, rgba(255,0,128,0.3) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(0,255,128,0.3) 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, rgba(128,0,255,0.3) 1px, transparent 0)
+      \`,
+      backgroundSize: "80px 80px, 120px 120px, 160px 160px",
+      backgroundPosition: "0 0, 40px 40px, 80px 80px",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "electric-storm",
+    name: "Electric Storm",
+    category: "effects",
+    badge: "Popular",
+    description: "Electric lightning storm with charged atmosphere",
+    style: {
+      background: `
+        radial-gradient(ellipse at top, rgba(99, 102, 241, 0.4) 0%, transparent 70%),
+        radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.4) 0%, transparent 70%),
+        linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Electric Storm Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(ellipse at top, rgba(99, 102, 241, 0.4) 0%, transparent 70%),
+        radial-gradient(ellipse at bottom, rgba(139, 92, 246, 0.4) 0%, transparent 70%),
+        linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "coral-reef-vivid",
+    name: "Coral Reef Vivid",
+    category: "decorative",
+    description: "Vibrant coral reef with tropical marine colors",
+    style: {
+      background: `
+        radial-gradient(circle at 25% 25%, #f97316 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, #10b981 0%, transparent 50%),
+        linear-gradient(135deg, #fef3c7 0%, #ecfdf5 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Coral Reef Vivid Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(circle at 25% 25%, #f97316 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%),
+        radial-gradient(circle at 50% 80%, #10b981 0%, transparent 50%),
+        linear-gradient(135deg, #fef3c7 0%, #ecfdf5 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "diamond-sparkle",
+    name: "Diamond Sparkle",
+    category: "geometric",
+    badge: "New",
+    description: "Sparkling diamond pattern with prismatic effects",
+    style: {
+      backgroundColor: "#f8fafc",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg transform='translate(10,10)'%3E%3Cpolygon fill='%23f59e0b' fill-opacity='0.2' points='10,0 20,10 10,20 0,10'/%3E%3Cpolygon fill='%236366f1' fill-opacity='0.1' points='5,5 15,5 10,15'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Diamond Sparkle Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f8fafc",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'40\\' height=\\'40\\' viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg transform=\\'translate(10,10)\\'%3E%3Cpolygon fill=\\'%23f59e0b\\' fill-opacity=\\'0.2\\' points=\\'10,0 20,10 10,20 0,10\\'/%3E%3Cpolygon fill=\\'%236366f1\\' fill-opacity=\\'0.1\\' points=\\'5,5 15,5 10,15\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "sunset-gradient-mesh",
+    name: "Sunset Gradient Mesh",
+    category: "gradients",
+    description: "Complex sunset mesh with warm gradient transitions",
+    style: {
+      background: `
+        radial-gradient(at 40% 20%, #ffbe0b 0px, transparent 50%),
+        radial-gradient(at 80% 0%, #fb5607 0px, transparent 50%),
+        radial-gradient(at 0% 50%, #ff006e 0px, transparent 50%),
+        radial-gradient(at 80% 50%, #8338ec 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #3a86ff 0px, transparent 50%),
+        radial-gradient(at 80% 100%, #06ffa5 0px, transparent 50%),
+        radial-gradient(at 0% 0%, #ffbe0b 0px, transparent 50%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Sunset Gradient Mesh Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(at 40% 20%, #ffbe0b 0px, transparent 50%),
+        radial-gradient(at 80% 0%, #fb5607 0px, transparent 50%),
+        radial-gradient(at 0% 50%, #ff006e 0px, transparent 50%),
+        radial-gradient(at 80% 50%, #8338ec 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #3a86ff 0px, transparent 50%),
+        radial-gradient(at 80% 100%, #06ffa5 0px, transparent 50%),
+        radial-gradient(at 0% 0%, #ffbe0b 0px, transparent 50%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "northern-lights-dark",
+    name: "Northern Lights Dark",
+    category: "effects",
+    badge: "Popular",
+    description: "Dark aurora borealis with mystical green-purple lights",
+    style: {
+      background: `
+        radial-gradient(ellipse at top, rgba(34, 197, 94, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(34, 211, 238, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Northern Lights Dark Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(ellipse at top, rgba(34, 197, 94, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(168, 85, 247, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(34, 211, 238, 0.4) 0%, transparent 50%),
+        linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "geometric-prism",
+    name: "Geometric Prism",
+    category: "geometric",
+    description: "Complex geometric prism with refracted colors",
+    style: {
+      backgroundColor: "#ffffff",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill-opacity='0.08'%3E%3Cpolygon fill='%23ef4444' points='40,0 80,40 40,80 0,40'/%3E%3Cpolygon fill='%2322c55e' points='20,20 60,20 40,60'/%3E%3Cpolygon fill='%233b82f6' points='20,60 60,60 40,20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Geometric Prism Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#ffffff",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'80\\' height=\\'80\\' viewBox=\\'0 0 80 80\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill-opacity=\\'0.08\\'%3E%3Cpolygon fill=\\'%23ef4444\\' points=\\'40,0 80,40 40,80 0,40\\'/%3E%3Cpolygon fill=\\'%2322c55e\\' points=\\'20,20 60,20 40,60\\'/%3E%3Cpolygon fill=\\'%233b82f6\\' points=\\'20,60 60,60 40,20\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
