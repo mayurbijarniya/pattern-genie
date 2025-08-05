@@ -21,22 +21,54 @@ export default function Home() {
   // Update theme based on pattern background color
   useEffect(() => {
     if (activePatternObj) {
-      // Check if pattern has dark characteristics
       const background = activePatternObj.style.background || activePatternObj.style.backgroundColor || "";
-      const isDark =
+      const backgroundImage = activePatternObj.style.backgroundImage || "";
+      
+      // Check for dark pattern characteristics
+      const isDark = 
+        // Dark keywords in ID
         activePatternObj.id.includes("dark") ||
         activePatternObj.id.includes("deep") ||
-        (typeof background === "string" &&
-          (background.includes("#0") ||
-            background.includes("#1") ||
-            background.includes("rgba(0,") ||
-            background.includes("rgba(1,") ||
-            background.includes("#164e63") ||
-            background.includes("#0e7490")));
+        activePatternObj.id.includes("midnight") ||
+        activePatternObj.id.includes("black") ||
+        activePatternObj.id.includes("night") ||
+        // Dark colors in background
+        (typeof background === "string" && (
+          background.includes("#0") ||
+          background.includes("#1") ||
+          background.includes("#2") ||
+          background.includes("rgba(0,") ||
+          background.includes("rgba(1,") ||
+          background.includes("rgba(2,") ||
+          background.includes("#164e63") ||
+          background.includes("#0e7490") ||
+          background.includes("#1e1b4b") ||
+          background.includes("#1e3a8a") ||
+          background.includes("#082f49") ||
+          background.includes("#0f172a")
+        )) ||
+        // Dark colors in background image
+        (typeof backgroundImage === "string" && (
+          backgroundImage.includes("%23000") ||
+          backgroundImage.includes("%230") ||
+          backgroundImage.includes("%231") ||
+          backgroundImage.includes("%232")
+        ));
 
       setTheme(isDark ? "dark" : "light");
+      
+      // Apply theme to document root for global styling
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
+      } else {
+        document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
+      }
     } else {
       setTheme("light");
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
     }
   }, [activePattern, activePatternObj]);
 

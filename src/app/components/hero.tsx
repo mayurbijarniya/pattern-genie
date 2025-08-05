@@ -18,7 +18,7 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
         {/* Badge */}
         <Badge variant="secondary" className="mx-auto">
           <Palette className="h-3 w-3 mr-1" />
-          25+ Premium Patterns
+          50+ Premium Patterns
         </Badge>
 
         {/* Main Heading */}
@@ -63,7 +63,7 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto pt-8">
           <div className="text-center">
-            <div className="text-2xl font-bold text-foreground">25+</div>
+            <div className="text-2xl font-bold text-foreground">50+</div>
             <div className="text-sm text-muted-foreground">Patterns</div>
           </div>
           <div className="text-center">
