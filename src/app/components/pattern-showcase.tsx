@@ -62,6 +62,10 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
         className="h-32 w-full relative cursor-pointer"
         style={pattern.style}
         onClick={() => previewPattern(pattern)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && previewPattern(pattern)}
+        aria-label={`Preview ${pattern.name} pattern`}
       >
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
         <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -152,11 +156,12 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
           <div className="relative max-w-md mx-auto">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
-              type="text"
-              placeholder="Search patterns..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                          type="text"
+            placeholder="Search patterns..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            aria-label="Search patterns"
             />
           </div>
 
