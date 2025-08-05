@@ -88,8 +88,6 @@ export default function Home() {
           
           <main>
             <Hero
-              activePattern={activePattern}
-              setActivePattern={setActivePattern}
               theme={theme}
             />
             
