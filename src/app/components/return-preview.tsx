@@ -9,7 +9,7 @@ interface ReturnPreviewProps {
   onReset?: () => void;
 }
 
-export default function ReturnPreview({ theme, activePattern, onReset }: ReturnPreviewProps) {
+export default function ReturnPreview({ theme: _theme, activePattern, onReset }: ReturnPreviewProps) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };

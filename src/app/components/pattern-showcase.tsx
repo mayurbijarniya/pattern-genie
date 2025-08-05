@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { wavePatterns } from "../utils/patterns";
 import { Pattern } from "../types/pattern";
 import { Copy, Check, Eye, Search, Filter } from "lucide-react";
@@ -15,7 +15,7 @@ interface PatternShowcaseProps {
   theme: "light" | "dark";
 }
 
-export default function PatternShowcase({ activePattern, setActivePattern, theme }: PatternShowcaseProps) {
+export default function PatternShowcase({ activePattern: _activePattern, setActivePattern, theme: _theme }: PatternShowcaseProps) {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
@@ -45,7 +45,7 @@ export default function PatternShowcase({ activePattern, setActivePattern, theme
       setCopiedId(pattern.id);
       toast.success(`${pattern.name} copied to clipboard!`);
       setTimeout(() => setCopiedId(null), 2000);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy to clipboard");
     }
   };

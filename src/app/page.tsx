@@ -7,9 +7,7 @@ import PatternShowcase from "./components/pattern-showcase";
 import SupportDropdown from "./components/support-dropdown";
 import ReturnPreview from "./components/return-preview";
 import { useState, useEffect } from "react";
-import { ThemeProvider } from "./components/theme-provider";
 import { wavePatterns } from "./utils/patterns";
-import { Toaster } from "sonner";
 
 export default function Home() {
   const [activePattern, setActivePattern] = useState<string | null>(null);

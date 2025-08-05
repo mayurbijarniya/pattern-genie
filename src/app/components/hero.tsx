@@ -10,7 +10,7 @@ interface HeroProps {
   theme: "light" | "dark";
 }
 
-export default function Hero({ activePattern, setActivePattern, theme }: HeroProps) {
+export default function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="max-w-4xl mx-auto text-center space-y-8">

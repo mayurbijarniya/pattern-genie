@@ -7,7 +7,7 @@ interface NavbarProps {
   theme: "light" | "dark";
 }
 
-export default function Navbar({ theme }: NavbarProps) {
+export default function Navbar({ theme: _theme }: NavbarProps) {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -9,7 +9,7 @@ interface SupportDropdownProps {
   theme: "light" | "dark";
 }
 
-export default function SupportDropdown({ theme }: SupportDropdownProps) {
+export default function SupportDropdown({ theme: _theme }: SupportDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const supportOptions = [
