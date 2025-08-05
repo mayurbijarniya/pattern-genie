@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// Remove tabs import for custom implementation
 import { wavePatterns } from "../utils/patterns";
 import { Pattern } from "../types/pattern";
 import { Copy, Check, Eye, Search, Filter, Sparkles, Star, X } from "lucide-react";
@@ -304,49 +304,86 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             )}
           </div>
 
-          {/* Category Filter Tabs - Centered & Improved */}
+          {/* Category Filter Tabs - Animated Slide Effect */}
           <div className="flex justify-center w-full">
-            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-auto">
-              <TabsList className="inline-flex h-10 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground">
-                <TabsTrigger 
-                  value="all"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  All ({wavePatterns.length})
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="gradients"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  Gradients ({categoryStats.gradients || 0})
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="geometric"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  Geometric ({categoryStats.geometric || 0})
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="decorative"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  Decorative ({categoryStats.decorative || 0})
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="effects"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  Effects ({categoryStats.effects || 0})
-                </TabsTrigger>
-                <TabsTrigger 
-                  value="favorites"
-                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-sm h-8"
-                >
-                  <Star className="h-4 w-4 mr-1" />
-                  Favorites ({favorites.length})
-                </TabsTrigger>
-              </TabsList>
-            </Tabs>
+            <div className="inline-flex h-10 items-center justify-center rounded-xl bg-muted/50 backdrop-blur-sm border border-border/50 p-1 text-muted-foreground relative">
+              {/* Animated background slider */}
+              <div 
+                className="absolute top-1 bottom-1 bg-black dark:bg-white rounded-lg transition-all duration-300 ease-out shadow-sm"
+                style={{
+                  left: `${['all', 'gradients', 'geometric', 'decorative', 'effects', 'favorites'].indexOf(selectedCategory) * (100 / 6) + 0.25}%`,
+                  width: `${100 / 6 - 0.5}%`,
+                }}
+              />
+              
+              {/* Tab buttons */}
+              <button
+                onClick={() => setSelectedCategory('all')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'all' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                All ({wavePatterns.length})
+              </button>
+              
+              <button
+                onClick={() => setSelectedCategory('gradients')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'gradients' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                Gradients ({categoryStats.gradients || 0})
+              </button>
+              
+              <button
+                onClick={() => setSelectedCategory('geometric')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'geometric' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                Geometric ({categoryStats.geometric || 0})
+              </button>
+              
+              <button
+                onClick={() => setSelectedCategory('decorative')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'decorative' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                Decorative ({categoryStats.decorative || 0})
+              </button>
+              
+              <button
+                onClick={() => setSelectedCategory('effects')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'effects' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                Effects ({categoryStats.effects || 0})
+              </button>
+              
+              <button
+                onClick={() => setSelectedCategory('favorites')}
+                className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1.5 text-sm font-medium transition-all duration-300 h-8 min-w-0 flex-1 ${
+                  selectedCategory === 'favorites' 
+                    ? 'text-white dark:text-black' 
+                    : 'text-muted-foreground hover:text-foreground hover:scale-105'
+                }`}
+              >
+                <Star className="h-4 w-4 mr-1" />
+                Favorites ({favorites.length})
+              </button>
+            </div>
           </div>
         </div>
 
