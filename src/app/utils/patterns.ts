@@ -414,4 +414,104 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "liquid-motion",
+    name: "Liquid Motion",
+    category: "effects",
+    badge: "New",
+    description: "Fluid-like motion with organic wave patterns",
+    style: {
+      background: `
+        radial-gradient(circle at 25% 25%, #0ea5e9 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%),
+        linear-gradient(115deg, #e0f2fe 0%, #bae6fd 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Liquid Motion Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(circle at 25% 25%, #0ea5e9 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #06b6d4 0%, transparent 50%),
+        linear-gradient(115deg, #e0f2fe 0%, #bae6fd 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "diamond-waves",
+    name: "Diamond Waves",
+    category: "geometric",
+    description: "Diamond-shaped pattern with wave-like repetition",
+    style: {
+      backgroundColor: "#f8fafc",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230ea5e9' fill-opacity='0.1'%3E%3Cpath d='M20 20l-10-10h20l-10 10zm0 0l10 10h-20l10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Diamond Waves Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f8fafc",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'40\\' height=\\'40\\' viewBox=\\'0 0 40 40\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%230ea5e9\\' fill-opacity=\\'0.1\\'%3E%3Cpath d=\\'M20 20l-10-10h20l-10 10zm0 0l10 10h-20l10-10z\\'/%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "midnight-ocean",
+    name: "Midnight Ocean",
+    category: "gradients",
+    badge: "Popular",
+    description: "Deep midnight blue ocean gradient",
+    style: {
+      background: "linear-gradient(135deg, #1e1b4b 0%, #1e3a8a 25%, #1e40af 50%, #2563eb 75%, #3b82f6 100%)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Midnight Ocean Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(135deg, #1e1b4b 0%, #1e3a8a 25%, #1e40af 50%, #2563eb 75%, #3b82f6 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "sea-foam-texture",
+    name: "Sea Foam Texture",
+    category: "decorative",
+    description: "Textured pattern resembling sea foam on beach",
+    style: {
+      backgroundColor: "#f0f9ff",
+      backgroundImage: `
+        radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, #06b6d4 1px, transparent 0)
+      `,
+      backgroundSize: "20px 20px, 30px 30px",
+      backgroundPosition: "0 0, 15px 15px",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Sea Foam Texture Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f0f9ff",
+      backgroundImage: \`
+        radial-gradient(circle at 1px 1px, #0ea5e9 1px, transparent 0),
+        radial-gradient(circle at 1px 1px, #06b6d4 1px, transparent 0)
+      \`,
+      backgroundSize: "20px 20px, 30px 30px",
+      backgroundPosition: "0 0, 15px 15px",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
