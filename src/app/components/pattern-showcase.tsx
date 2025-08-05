@@ -306,23 +306,41 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
 
           {/* Category Filter Tabs */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-            <TabsList className="grid w-full grid-cols-6 max-w-4xl mx-auto bg-background/50 backdrop-blur-sm border shadow-lg rounded-xl p-1">
-              <TabsTrigger value="all">
+            <TabsList className="grid w-full grid-cols-6 max-w-4xl mx-auto bg-background/50 backdrop-blur-sm border shadow-lg rounded-xl p-1.5">
+              <TabsTrigger 
+                value="all"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 All ({wavePatterns.length})
               </TabsTrigger>
-              <TabsTrigger value="gradients">
+              <TabsTrigger 
+                value="gradients"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 Gradients ({categoryStats.gradients || 0})
               </TabsTrigger>
-              <TabsTrigger value="geometric">
+              <TabsTrigger 
+                value="geometric"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 Geometric ({categoryStats.geometric || 0})
               </TabsTrigger>
-              <TabsTrigger value="decorative">
+              <TabsTrigger 
+                value="decorative"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 Decorative ({categoryStats.decorative || 0})
               </TabsTrigger>
-              <TabsTrigger value="effects">
+              <TabsTrigger 
+                value="effects"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 Effects ({categoryStats.effects || 0})
               </TabsTrigger>
-              <TabsTrigger value="favorites">
+              <TabsTrigger 
+                value="favorites"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+              >
                 <Star className="h-4 w-4 mr-1" />
                 Favorites ({favorites.length})
               </TabsTrigger>
