@@ -565,4 +565,45 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "underwater-depth",
+    name: "Underwater Depth",
+    category: "gradients",
+    badge: "Popular",
+    description: "Deep underwater gradient with layers of blue",
+    style: {
+      background: "radial-gradient(ellipse at center bottom, rgba(30, 58, 138, 0.8) 0%, rgba(30, 64, 175, 0.6) 30%, rgba(37, 99, 235, 0.4) 60%, rgba(59, 130, 246, 0.2) 80%, transparent 100%), linear-gradient(to bottom, #0ea5e9, #0284c7)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Underwater Depth Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(ellipse at center bottom, rgba(30, 58, 138, 0.8) 0%, rgba(30, 64, 175, 0.6) 30%, rgba(37, 99, 235, 0.4) 60%, rgba(59, 130, 246, 0.2) 80%, transparent 100%), linear-gradient(to bottom, #0ea5e9, #0284c7)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "crystalline-waves",
+    name: "Crystalline Waves",
+    category: "geometric",
+    description: "Crystal-like geometric pattern with wave motifs",
+    style: {
+      backgroundColor: "#f8fafc",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2306b6d4' fill-opacity='0.08'%3E%3Cpath d='M30 0l15 30-15 30L15 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Crystalline Waves Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f8fafc",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'none\\' fill-rule=\\'evenodd\\'%3E%3Cg fill=\\'%2306b6d4\\' fill-opacity=\\'0.08\\'%3E%3Cpath d=\\'M30 0l15 30-15 30L15 30z\\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
