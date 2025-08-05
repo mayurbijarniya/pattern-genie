@@ -14,7 +14,7 @@ interface HeroProps {
 function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-      <div className="max-w-4xl mx-auto text-center space-y-8">
+      <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
         {/* Badge */}
         <Badge variant="secondary" className="mx-auto">
           <Palette className="h-3 w-3 mr-1" />
