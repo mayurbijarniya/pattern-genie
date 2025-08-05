@@ -31,8 +31,9 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Create stunning websites with our curated collection of modern CSS background patterns. 
-            Copy, paste, and watch your designs come to life with wave-inspired beauty.
+            Professional-grade background patterns and gradients. Easily
+            copy the code and seamlessly integrate it into your projects.
+            Crafted with modern CSS and Tailwind
           </p>
         </div>
 
@@ -40,7 +41,7 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button 
             size="lg" 
-            className="min-w-[200px]"
+            className="min-w-[200px] bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100"
             onClick={() => {
               const showcase = document.getElementById('pattern-showcase');
               showcase?.scrollIntoView({ behavior: 'smooth' });
@@ -48,15 +49,6 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
           >
             <Eye className="h-4 w-4 mr-2" />
             Browse Patterns
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg"
-            onClick={() => setActivePattern(null)}
-          >
-            <ArrowDown className="h-4 w-4 mr-2" />
-            Reset Preview
           </Button>
         </div>
 
@@ -78,7 +70,7 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
 
         {/* Current Pattern Display */}
         {activePattern && (
-          <div className="bg-card border border-border rounded-lg p-4 max-w-md mx-auto">
+          <div className="glassmorphism-card border border-border/20 rounded-lg p-4 max-w-md mx-auto">
             <div className="flex items-center justify-between">
               <div className="text-left">
                 <p className="text-sm text-muted-foreground">Currently Previewing</p>
@@ -87,6 +79,7 @@ function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
               <Button
                 variant="ghost"
                 size="sm"
+                className="bg-white/10 text-foreground hover:bg-white/20"
                 onClick={() => setActivePattern(null)}
               >
                 <Copy className="h-4 w-4" />

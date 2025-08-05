@@ -28,6 +28,7 @@ export default function Navbar({ theme: _theme }: NavbarProps) {
             <Button
               variant="ghost"
               size="sm"
+              className="bg-transparent text-foreground hover:bg-foreground/10"
               onClick={() => window.open("https://github.com/mayurbijarniya/pattern-wave", "_blank")}
             >
               <Github className="h-4 w-4 mr-2" />
@@ -37,6 +38,7 @@ export default function Navbar({ theme: _theme }: NavbarProps) {
             <Button
               variant="outline"
               size="sm"
+              className="bg-transparent border-foreground/20 text-foreground hover:bg-foreground/10"
               onClick={() => window.open("https://github.com/sponsors/mayurbijarniya", "_blank")}
             >
               <Heart className="h-4 w-4 mr-2 text-red-500" />

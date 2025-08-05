@@ -4,7 +4,6 @@ import Hero from "./components/hero";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import PatternShowcase from "./components/pattern-showcase";
-import SupportDropdown from "./components/support-dropdown";
 import ReturnPreview from "./components/return-preview";
 import { useState, useEffect } from "react";
 import { wavePatterns } from "./utils/patterns";
@@ -105,7 +104,6 @@ export default function Home() {
         </div>
 
         {/* Floating UI Elements */}
-        <SupportDropdown theme={theme} />
         <ReturnPreview 
           theme={theme} 
           activePattern={activePattern}

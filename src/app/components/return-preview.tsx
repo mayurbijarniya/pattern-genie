@@ -16,12 +16,12 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
 
   if (!activePattern && !onReset) {
     return (
-      <div className="fixed bottom-6 left-6 z-50">
+      <div className="fixed bottom-6 right-6 z-50">
         <Button
           onClick={scrollToTop}
           variant="outline"
           size="icon"
-          className="rounded-full h-12 w-12 shadow-lg bg-background/80 backdrop-blur-md"
+          className="rounded-full h-12 w-12 shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800"
         >
           <ArrowUp className="h-5 w-5" />
         </Button>
@@ -30,14 +30,14 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
   }
 
   return (
-    <div className="fixed bottom-6 left-6 z-50 space-y-2">
+    <div className="fixed bottom-6 right-6 z-50 space-y-2">
       {/* Reset Pattern Button */}
       {activePattern && onReset && (
         <Button
           onClick={onReset}
           variant="outline"
           size="sm"
-          className="rounded-full shadow-lg bg-background/80 backdrop-blur-md"
+          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
         >
           <X className="h-4 w-4 mr-2" />
           Reset Preview
@@ -49,7 +49,7 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
         onClick={scrollToTop}
         variant="outline"
         size="icon"
-        className="rounded-full h-12 w-12 shadow-lg bg-background/80 backdrop-blur-md"
+        className="rounded-full h-12 w-12 shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
       >
         <ArrowUp className="h-5 w-5" />
       </Button>
