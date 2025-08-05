@@ -224,4 +224,194 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "azure-bubble-pattern",
+    name: "Azure Bubble Pattern",
+    category: "decorative",
+    description: "Floating bubbles in azure blue tones",
+    style: {
+      backgroundColor: "#f0f9ff",
+      backgroundImage: `
+        radial-gradient(circle at 20% 80%, #0ea5e9 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, #06b6d4 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, #0891b2 1.5px, transparent 1.5px)
+      `,
+      backgroundSize: "60px 60px, 40px 40px, 80px 80px",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Azure Bubble Pattern Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f0f9ff",
+      backgroundImage: \`
+        radial-gradient(circle at 20% 80%, #0ea5e9 2px, transparent 2px),
+        radial-gradient(circle at 80% 20%, #06b6d4 1px, transparent 1px),
+        radial-gradient(circle at 40% 40%, #0891b2 1.5px, transparent 1.5px)
+      \`,
+      backgroundSize: "60px 60px, 40px 40px, 80px 80px",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "deep-sea-gradient",
+    name: "Deep Sea Gradient",
+    category: "gradients",
+    badge: "Popular",
+    description: "Dark ocean depths with mysterious blue-black tones",
+    style: {
+      background: "linear-gradient(180deg, #0c4a6e 0%, #082f49 50%, #0f172a 100%)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Deep Sea Gradient Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(180deg, #0c4a6e 0%, #082f49 50%, #0f172a 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "wave-mesh-gradient",
+    name: "Wave Mesh Gradient",
+    category: "effects",
+    badge: "New",
+    description: "Complex mesh with multiple wave gradients",
+    style: {
+      background: `
+        radial-gradient(at 40% 20%, #06b6d4 0px, transparent 50%),
+        radial-gradient(at 80% 0%, #0891b2 0px, transparent 50%),
+        radial-gradient(at 0% 50%, #0ea5e9 0px, transparent 50%),
+        radial-gradient(at 80% 50%, #22d3ee 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #67e8f9 0px, transparent 50%),
+        radial-gradient(at 80% 100%, #a5f3fc 0px, transparent 50%),
+        radial-gradient(at 0% 0%, #0284c7 0px, transparent 50%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Wave Mesh Gradient Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(at 40% 20%, #06b6d4 0px, transparent 50%),
+        radial-gradient(at 80% 0%, #0891b2 0px, transparent 50%),
+        radial-gradient(at 0% 50%, #0ea5e9 0px, transparent 50%),
+        radial-gradient(at 80% 50%, #22d3ee 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #67e8f9 0px, transparent 50%),
+        radial-gradient(at 80% 100%, #a5f3fc 0px, transparent 50%),
+        radial-gradient(at 0% 0%, #0284c7 0px, transparent 50%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "coral-reef-pattern",
+    name: "Coral Reef Pattern",
+    category: "decorative",
+    description: "Organic coral-like pattern with ocean blues",
+    style: {
+      backgroundColor: "#e0f2fe",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23066d82' fill-opacity='0.15'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm30 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z'/%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Coral Reef Pattern Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#e0f2fe",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%23066d82\\' fill-opacity=\\'0.15\\'%3E%3Cpath d=\\'M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm30 0c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20z\\'/%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "tsunami-wave",
+    name: "Tsunami Wave",
+    category: "effects",
+    description: "Dramatic wave effect with powerful blue gradients",
+    style: {
+      background: `
+        linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.5) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(14, 165, 233, 0.5) 50%, transparent 70%),
+        linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Tsunami Wave Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.5) 50%, transparent 70%),
+        linear-gradient(-45deg, transparent 30%, rgba(14, 165, 233, 0.5) 50%, transparent 70%),
+        linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "arctic-ice",
+    name: "Arctic Ice",
+    category: "gradients",
+    description: "Cold, crisp gradient reminiscent of arctic ice",
+    style: {
+      background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #bae6fd 50%, #7dd3fc 75%, #38bdf8 100%)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Arctic Ice Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #bae6fd 50%, #7dd3fc 75%, #38bdf8 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "ocean-current",
+    name: "Ocean Current",
+    category: "geometric",
+    badge: "New",
+    description: "Flowing lines that mimic ocean currents",
+    style: {
+      backgroundColor: "#f8fafc",
+      backgroundImage: `
+        linear-gradient(45deg, #0ea5e9 25%, transparent 25%),
+        linear-gradient(-45deg, #0ea5e9 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #06b6d4 75%),
+        linear-gradient(-45deg, transparent 75%, #06b6d4 75%)
+      `,
+      backgroundSize: "30px 30px",
+      backgroundPosition: "0 0, 0 15px, 15px -15px, -15px 0px",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Ocean Current Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f8fafc",
+      backgroundImage: \`
+        linear-gradient(45deg, #0ea5e9 25%, transparent 25%),
+        linear-gradient(-45deg, #0ea5e9 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #06b6d4 75%),
+        linear-gradient(-45deg, transparent 75%, #06b6d4 75%)
+      \`,
+      backgroundSize: "30px 30px",
+      backgroundPosition: "0 0, 0 15px, 15px -15px, -15px 0px",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];

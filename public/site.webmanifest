@@ -1,0 +1,21 @@
+{
+  "name": "Pattern Wave",
+  "short_name": "Pattern Wave",
+  "description": "Modern background patterns and wave-inspired designs for web developers",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "developer", "design"],
+  "lang": "en-US",
+  "scope": "/"
+}
