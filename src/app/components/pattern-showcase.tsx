@@ -19,6 +19,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isLoading, setIsLoading] = useState(false);
 
   // Filter patterns based on search and category
   const filteredPatterns = useMemo(() => {
@@ -41,12 +42,15 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
 
   const copyToClipboard = async (pattern: Pattern) => {
     try {
+      setIsLoading(true);
       await navigator.clipboard.writeText(pattern.code);
       setCopiedId(pattern.id);
       toast.success(`${pattern.name} copied to clipboard!`);
       setTimeout(() => setCopiedId(null), 2000);
     } catch (_error) {
       toast.error("Failed to copy to clipboard");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -117,7 +121,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             size="sm"
             className="flex-1"
             onClick={() => copyToClipboard(pattern)}
-            disabled={copiedId === pattern.id}
+            disabled={copiedId === pattern.id || isLoading}
           >
             {copiedId === pattern.id ? (
               <>
