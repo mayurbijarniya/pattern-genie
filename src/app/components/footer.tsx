@@ -13,7 +13,7 @@ export default function Footer({ theme }: FooterProps) {
         isPatternDark ? "text-white" : " dark:text-neutral-200"
       }`}
     >
-      <div className="container mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <div
           className={`mx-auto max-w-6xl border-t transition-colors duration-300 ${
             isPatternDark

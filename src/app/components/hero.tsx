@@ -20,7 +20,7 @@ export default function Hero({ theme }: HeroProps) {
   const isPatternDark = theme === "dark";
 
   return (
-    <section className="container py-8 sm:py-12 md:py-16 lg:py-18 text-center relative overflow-hidden px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+    <section className="w-full py-8 sm:py-12 md:py-16 lg:py-18 text-center relative overflow-hidden px-4 sm:px-6 lg:px-8 flex items-center justify-center">
       <div className="mx-auto max-w-6xl relative z-10">
         {/* Badge */}
         <div className="mb-6 sm:mb-8 md:mb-10 flex justify-center">
@@ -68,7 +68,7 @@ export default function Hero({ theme }: HeroProps) {
               className={`bg-gradient-to-r bg-[200%_auto] bg-clip-text leading-tight text-transparent transition-all duration-300 ${
                 isPatternDark
                   ? "from-neutral-100 via-slate-400 to-neutral-400"
-                  : "from-neutral-900 via-slate-500 to-neutral-500 dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400"
+                  : "from-black via-gray-800 to-black dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400"
               }`}
             >
               Patterns & Waves

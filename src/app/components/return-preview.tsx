@@ -31,6 +31,19 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
 
   return (
     <div className="fixed bottom-6 right-6 z-50 space-y-2">
+      {/* Return to Preview Button */}
+      {activePattern && (
+        <Button
+          onClick={scrollToTop}
+          variant="outline"
+          size="sm"
+          className="rounded-full shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
+        >
+          <ArrowUp className="h-4 w-4 mr-2" />
+          Return to Preview
+        </Button>
+      )}
+
       {/* Reset Pattern Button */}
       {activePattern && onReset && (
         <Button
@@ -44,15 +57,17 @@ export default function ReturnPreview({ theme: _theme, activePattern, onReset }:
         </Button>
       )}
 
-      {/* Scroll to Top Button */}
-      <Button
-        onClick={scrollToTop}
-        variant="outline"
-        size="icon"
-        className="rounded-full h-12 w-12 shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
-      >
-        <ArrowUp className="h-5 w-5" />
-      </Button>
+      {/* Scroll to Top Button - only when no active pattern */}
+      {!activePattern && (
+        <Button
+          onClick={scrollToTop}
+          variant="outline"
+          size="icon"
+          className="rounded-full h-12 w-12 shadow-lg bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-800 backdrop-blur-md"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </Button>
+      )}
     </div>
   );
 }

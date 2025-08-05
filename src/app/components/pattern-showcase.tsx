@@ -82,10 +82,17 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
   const previewPattern = (pattern: Pattern) => {
     setActivePattern(pattern.id);
     toast.success(`Previewing ${pattern.name}`);
+    // Scroll to top when pattern is selected
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const PatternCard = ({ pattern }: { pattern: Pattern }) => (
-    <div className="group relative bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300">
+  const PatternCard = ({ pattern }: { pattern: Pattern }) => {
+    const isActive = _activePattern === pattern.id;
+    
+    return (
+    <div className={`group relative bg-card border rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 ${
+      isActive ? 'border-black dark:border-white border-2' : 'border-border'
+    }`}>
       {/* Pattern Preview */}
       <div 
         className="h-32 w-full relative cursor-pointer"
@@ -164,6 +171,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
       </div>
     </div>
   );
+};
 
   return (
     <section id="pattern-showcase" className="relative py-20 px-4 sm:px-6 lg:px-8">
