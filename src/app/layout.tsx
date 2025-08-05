@@ -126,7 +126,7 @@ export const metadata: Metadata = {
     siteName: "Pattern Wave",
     images: [
       {
-        url: "/og-banner.png",
+        url: "/og-banner.svg",
         width: 1200,
         height: 630,
         alt: "Pattern Wave - Modern Background Patterns",
@@ -138,7 +138,7 @@ export const metadata: Metadata = {
     title: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
     description:
       "Create stunning websites with 100+ modern CSS background patterns and wave-inspired gradients. Copy, paste, and bring your designs to life.",
-    images: ["/og-banner.png"],
+    images: ["/og-banner.svg"],
     creator: "@mayurbijarniya",
   },
   robots: {
