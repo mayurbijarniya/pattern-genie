@@ -6,31 +6,31 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "./components/theme-provider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://patternwave.dev"),
+  metadataBase: new URL("https://patterngenie.dev"),
   title: {
-    default: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
-    template: "%s | Pattern Wave",
+    default: "Pattern Genie - Modern Background Patterns & Magical Designs",
+    template: "%s | Pattern Genie",
   },
   description:
-    "Create stunning websites with our curated collection of 100+ modern CSS background patterns and wave-inspired gradients. Perfect for developers and designers. Copy, paste, and bring your designs to life with beautiful oceanic patterns.",
+    "Create stunning websites with our curated collection of 130+ modern CSS background patterns and magical gradients. Perfect for developers and designers. Copy, paste, and bring your designs to life with beautiful pattern magic.",
   keywords: [
     // Primary keywords (focus on user intent)
     "css background patterns",
     "background patterns generator",
     "css gradients generator",
-    "wave patterns css",
-    "ocean gradients",
+    "pattern generator css",
+    "magical gradients",
     "tailwind css backgrounds",
     "web design backgrounds",
     "modern ui patterns",
     "css background snippets",
-    "wave gradient generator",
+    "pattern gradient generator",
 
     // Long-tail keywords (better for ranking)
     "free css background patterns library",
     "responsive background patterns for websites",
-    "modern wave css patterns",
-    "ocean-inspired background designs",
+    "modern magical css patterns",
+    "pattern-inspired background designs",
     "tailwind background pattern components",
     "css grid background patterns",
     "animated wave patterns css",
@@ -119,25 +119,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://patternwave.dev",
-    title: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
+    url: "https://patterngenie.dev",
+    title: "Pattern Genie - Modern Background Patterns & Magical Designs",
     description:
-      "Create stunning websites with our curated collection of 100+ modern CSS background patterns and wave-inspired gradients. Perfect for developers and designers.",
-    siteName: "Pattern Wave",
+      "Create stunning websites with our curated collection of 130+ modern CSS background patterns and magical gradients. Perfect for developers and designers.",
+    siteName: "Pattern Genie",
     images: [
       {
         url: "/og-banner.svg",
         width: 1200,
         height: 630,
-        alt: "Pattern Wave - Modern Background Patterns",
+        alt: "Pattern Genie - Modern Background Patterns",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
+    title: "Pattern Genie - Modern Background Patterns & Magical Designs",
     description:
-      "Create stunning websites with 100+ modern CSS background patterns and wave-inspired gradients. Copy, paste, and bring your designs to life.",
+      "Create stunning websites with 130+ modern CSS background patterns and magical gradients. Copy, paste, and bring your designs to life.",
     images: ["/og-banner.svg"],
     creator: "@mayurbijarniya",
   },

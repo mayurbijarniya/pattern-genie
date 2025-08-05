@@ -26,14 +26,14 @@ export default function Footer({ theme }: FooterProps) {
               isPatternDark ? "text-white" : ""
             }`}
           >
-            © {new Date().getFullYear()} Pattern Wave. All rights reserved.
+            © {new Date().getFullYear()} Pattern Genie. All rights reserved.
           </p>
           <p
             className={`mt-2 text-sm italic transition-colors duration-300 ${
               isPatternDark ? "text-white" : ""
             }`}
           >
-            Creating beautiful wave patterns
+            Creating beautiful magical patterns
           </p>
         </div>
       </div>

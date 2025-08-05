@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://patternwave.dev
+Host: https://patterngenie.dev
 
 # Sitemaps
-Sitemap: https://patternwave.dev/sitemap.xml
+Sitemap: https://patterngenie.dev/sitemap.xml

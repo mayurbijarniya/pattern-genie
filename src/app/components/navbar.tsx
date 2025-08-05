@@ -20,7 +20,7 @@ export default function Navbar({ theme }: NavbarProps) {
         >
           <Image
             src="/favicon.svg"
-            alt="Pattern Wave Logo"
+            alt="Pattern Genie Logo"
             width={20}
             height={20}
             className="flex-shrink-0 mt-[2px] h-6 w-6 sm:h-6 sm:w-6"
@@ -28,7 +28,7 @@ export default function Navbar({ theme }: NavbarProps) {
             draggable={false}
             style={{ userSelect: "none" }}
           />
-          <span className="whitespace-nowrap">Pattern Wave</span>
+          <span className="whitespace-nowrap">Pattern Genie</span>
         </span>
         <div className="flex items-center gap-3">
           <div className="flex gap-2 sm:gap-4">

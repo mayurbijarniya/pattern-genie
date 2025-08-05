@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://patternwave.dev',
+  siteUrl: process.env.SITE_URL || 'https://patterngenie.dev',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [
@@ -10,7 +10,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://patternwave.dev/sitemap.xml',
+      'https://patterngenie.dev/sitemap.xml',
     ],
   },
 };

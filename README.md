@@ -1,4 +1,4 @@
-# Pattern Wave 🌊
+# Pattern Genie 🌊
 
 Beautiful background patterns and wave-inspired designs for modern web development.
 

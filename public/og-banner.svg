@@ -11,18 +11,18 @@
     </linearGradient>
   </defs>
   
-  <!-- Wave Pattern -->
+  <!-- Magical Pattern -->
   <path d="M0,400 Q300,300 600,400 T1200,400 L1200,630 L0,630 Z" fill="rgba(255,255,255,0.1)"/>
   <path d="M0,450 Q300,350 600,450 T1200,450 L1200,630 L0,630 Z" fill="rgba(255,255,255,0.05)"/>
   
   <!-- Title -->
   <text x="600" y="280" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="72" font-weight="bold">
-    Pattern Wave
+    Pattern Genie
   </text>
   
   <!-- Subtitle -->
   <text x="600" y="340" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="400">
-    Modern Background Patterns &amp; Wave-Inspired Designs
+    Modern Background Patterns &amp; Magical Designs
   </text>
   
   <!-- Stats -->

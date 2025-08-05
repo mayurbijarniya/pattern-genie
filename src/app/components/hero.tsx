@@ -25,7 +25,7 @@ export default function Hero({ theme }: HeroProps) {
         {/* Badge */}
         <div className="mb-6 sm:mb-8 md:mb-10 flex justify-center">
           <a
-            href="https://github.com/mayurbijarniya/pattern-wave"
+            href="https://github.com/mayurbijarniya/pattern-genie"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex"
@@ -71,7 +71,7 @@ export default function Hero({ theme }: HeroProps) {
                   : "from-black via-gray-800 to-black dark:from-neutral-100 dark:via-slate-400 dark:to-neutral-400"
               }`}
             >
-              Patterns & Waves
+              Patterns & Magic
             </span>
           </h2>
         </div>
@@ -170,12 +170,12 @@ export default function Hero({ theme }: HeroProps) {
                 ? "bg-white text-black hover:bg-gray-100"
                 : "bg-slate-950 hover:bg-slate-900 dark:bg-white dark:text-black dark:hover:bg-gray-100"
             }`}
-            onClick={() => {
-              window.open(
-                "https://github.com/mayurbijarniya/pattern-wave#contributing",
-                "_blank"
-              );
-            }}
+                          onClick={() => {
+                window.open(
+                  "https://github.com/mayurbijarniya/pattern-genie#contributing",
+                  "_blank"
+                );
+              }}
           >
             <Github className="h-4 sm:h-5 w-4 sm:w-5" />
             Contribute Here!

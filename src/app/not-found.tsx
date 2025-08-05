@@ -21,9 +21,9 @@ export default function NotFound() {
         {/* 404 Content */}
         <div className="space-y-4">
           <h2 className="text-6xl font-bold text-primary">404</h2>
-          <h3 className="text-2xl font-semibold text-foreground">Wave Not Found</h3>
+          <h3 className="text-2xl font-semibold text-foreground">Pattern Not Found</h3>
           <p className="text-muted-foreground">
-            The pattern you&apos;re looking for has drifted away. Let&apos;s navigate back to calmer waters.
+            The pattern you&apos;re looking for has vanished. Let&apos;s navigate back to the magical collection.
           </p>
         </div>
 
