@@ -633,4 +633,45 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "electric-blue",
+    name: "Electric Blue",
+    category: "gradients",
+    badge: "New",
+    description: "Vibrant electric blue gradient with energy",
+    style: {
+      background: "linear-gradient(45deg, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #dbeafe 100%)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Electric Blue Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(45deg, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #93c5fd 75%, #dbeafe 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "wave-spiral",
+    name: "Wave Spiral",
+    category: "decorative",
+    description: "Spiral pattern inspired by ocean whirlpools",
+    style: {
+      backgroundColor: "#f0f9ff",
+      backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230ea5e9' fill-opacity='0.1'%3E%3Cpath d='M40 40c-11 0-20-9-20-20s9-20 20-20 20 9 20 20c0 11-9 20-20 20zm0-4c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z'/%3E%3C/g%3E%3C/svg%3E")`,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Wave Spiral Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      backgroundColor: "#f0f9ff",
+      backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\\'80\\' height=\\'80\\' viewBox=\\'0 0 80 80\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%230ea5e9\\' fill-opacity=\\'0.1\\'%3E%3Cpath d=\\'M40 40c-11 0-20-9-20-20s9-20 20-20 20 9 20 20c0 11-9 20-20 20zm0-4c8.8 0 16-7.2 16-16s-7.2-16-16-16-16 7.2-16 16 7.2 16 16 16z\\'/%3E%3C/g%3E%3C/svg%3E")',
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
