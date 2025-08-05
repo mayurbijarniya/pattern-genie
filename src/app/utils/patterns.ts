@@ -606,4 +606,31 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "morning-mist",
+    name: "Morning Mist",
+    category: "effects",
+    description: "Soft morning mist over calm waters",
+    style: {
+      background: `
+        linear-gradient(180deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.7) 50%, rgba(203, 213, 225, 0.5) 100%),
+        radial-gradient(ellipse at top, rgba(14, 165, 233, 0.1) 0%, transparent 70%),
+        linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Morning Mist Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        linear-gradient(180deg, rgba(241, 245, 249, 0.9) 0%, rgba(226, 232, 240, 0.7) 50%, rgba(203, 213, 225, 0.5) 100%),
+        radial-gradient(ellipse at top, rgba(14, 165, 233, 0.1) 0%, transparent 70%),
+        linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
