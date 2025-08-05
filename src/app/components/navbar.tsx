@@ -24,7 +24,7 @@ export default function Navbar({ theme: _theme }: NavbarProps) {
           </div>
 
           {/* Navigation Items */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button
               variant="ghost"
               size="sm"
