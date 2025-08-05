@@ -186,7 +186,7 @@ export default function RootLayout({
         />
         
         {/* Additional SEO meta tags */}
-        <meta name="theme-color" content="#0ea5e9" />
+        <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="light dark" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />

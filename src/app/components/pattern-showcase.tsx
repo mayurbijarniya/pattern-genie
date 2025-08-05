@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { wavePatterns } from "../utils/patterns";
 import { Pattern } from "../types/pattern";
-import { Copy, Check, Eye, Search, Filter } from "lucide-react";
+import { Copy, Check, Eye, Search, Filter, Sparkles, Star, X } from "lucide-react";
 import { toast } from "sonner";
 
 interface PatternShowcaseProps {
@@ -20,6 +20,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isLoading, setIsLoading] = useState(false);
+  const [favorites, setFavorites] = useState<string[]>([]);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -46,15 +47,50 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
     return () => window.removeEventListener('keydown', handleKeyPress);
   }, []);
 
+  // Load favorites from localStorage on mount
+  useEffect(() => {
+    const storedFavorites = localStorage.getItem('pattern-genie-favorites');
+    if (storedFavorites) {
+      try {
+        setFavorites(JSON.parse(storedFavorites));
+      } catch (error) {
+        console.error('Failed to parse favorites from localStorage:', error);
+      }
+    }
+  }, []);
+
+  // Save favorites to localStorage whenever favorites change
+  useEffect(() => {
+    localStorage.setItem('pattern-genie-favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  // Toggle favorite function
+  const toggleFavorite = (patternId: string) => {
+    setFavorites(prev => 
+      prev.includes(patternId) 
+        ? prev.filter(id => id !== patternId)
+        : [...prev, patternId]
+    );
+  };
+
   // Filter patterns based on search and category
   const filteredPatterns = useMemo(() => {
     return wavePatterns.filter((pattern) => {
       const matchesSearch = pattern.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            (pattern.description?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false);
-      const matchesCategory = selectedCategory === "all" || pattern.category === selectedCategory;
+      let matchesCategory = false;
+      
+      if (selectedCategory === "all") {
+        matchesCategory = true;
+      } else if (selectedCategory === "favorites") {
+        matchesCategory = favorites.includes(pattern.id);
+      } else {
+        matchesCategory = pattern.category === selectedCategory;
+      }
+      
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, favorites]);
 
   // Get pattern counts by category
   const categoryStats = useMemo(() => {
@@ -109,24 +145,32 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
           style={pattern.style}
         />
 
-        {/* Magic Star Button (top-left) */}
+        {/* Favorite Star Button (top-left) */}
         <button
           onClick={(e) => {
             e.stopPropagation();
-            // Could add favorite functionality here
+            toggleFavorite(pattern.id);
           }}
-          className="absolute top-3 left-3 z-10 w-8 h-8 rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:bg-black/30 hover:scale-110"
+          className={`absolute top-3 left-3 z-10 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 border ${
+            favorites.includes(pattern.id)
+              ? "bg-yellow-500/20 border-yellow-400/30 text-yellow-400"
+              : "bg-black/20 border-white/30 text-white hover:bg-black/30 hover:border-white/40"
+          }`}
+          title={favorites.includes(pattern.id) ? "Remove from favorites" : "Add to favorites"}
         >
-          <svg className="w-4 h-4 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
+          <Star
+            className={`h-4 w-4 transition-all duration-200 ${
+              favorites.includes(pattern.id) ? "fill-current scale-110" : ""
+            }`}
+          />
         </button>
 
-        {/* Enhanced Badge */}
+        {/* Pattern Craft Style Badge */}
         {pattern.badge && (
           <div className="absolute top-3 right-3 z-10">
-            <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0 text-xs font-semibold backdrop-blur-sm shadow-lg">
-              🌟 {pattern.badge}
+            <Badge className="gap-1 text-xs bg-background/80 backdrop-blur-sm border-border/50 px-2 py-1 text-foreground">
+              <Sparkles className="h-2.5 w-2.5 text-violet-600" />
+              <span>{pattern.badge}</span>
             </Badge>
           </div>
         )}
@@ -239,22 +283,30 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
 
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
-          {/* Search Bar */}
-          <div className="relative max-w-md mx-auto">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    {/* Enhanced Search Bar */}
+          <div className="relative max-w-lg mx-auto">
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
             <input
-                          type="text"
-            placeholder="Search patterns..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
-            aria-label="Search patterns"
+              type="text"
+              placeholder="Search magical patterns..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-12 pr-12 py-3 border border-border rounded-xl bg-background/50 backdrop-blur-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-black focus:border-black shadow-lg transition-all duration-300"
+              aria-label="Search patterns"
             />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
           </div>
 
           {/* Category Filter Tabs */}
           <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-            <TabsList className="grid w-full grid-cols-5 max-w-2xl mx-auto">
+            <TabsList className="grid w-full grid-cols-6 max-w-4xl mx-auto bg-background/50 backdrop-blur-sm border shadow-lg rounded-xl p-1">
               <TabsTrigger value="all">
                 All ({wavePatterns.length})
               </TabsTrigger>
@@ -269,6 +321,10 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               </TabsTrigger>
               <TabsTrigger value="effects">
                 Effects ({categoryStats.effects || 0})
+              </TabsTrigger>
+              <TabsTrigger value="favorites">
+                <Star className="h-4 w-4 mr-1" />
+                Favorites ({favorites.length})
               </TabsTrigger>
             </TabsList>
           </Tabs>
@@ -289,23 +345,41 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
           ))}
         </div>
 
-        {/* No Results */}
+        {/* No Results / Empty States */}
         {filteredPatterns.length === 0 && (
           <div className="text-center py-12">
-            <Filter className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-lg font-semibold text-foreground mb-2">No patterns found</h3>
-            <p className="text-muted-foreground mb-4">
-              Try adjusting your search or filter criteria
-            </p>
-            <Button
-              variant="outline"
-              onClick={() => {
-                setSearchTerm("");
-                setSelectedCategory("all");
-              }}
-            >
-              Clear Filters
-            </Button>
+            {selectedCategory === "favorites" ? (
+              <>
+                <Star className="h-16 w-16 text-yellow-400 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">No favorites yet</h3>
+                <p className="text-muted-foreground mb-4">
+                  Click the <Star className="inline h-4 w-4 text-yellow-400 mx-1" /> star on any pattern to add it to your favorites!
+                </p>
+                <Button
+                  variant="outline"
+                  onClick={() => setSelectedCategory("all")}
+                >
+                  Browse All Patterns
+                </Button>
+              </>
+            ) : (
+              <>
+                <Filter className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-foreground mb-2">No patterns found</h3>
+                <p className="text-muted-foreground mb-4">
+                  Try adjusting your search or filter criteria
+                </p>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSearchTerm("");
+                    setSelectedCategory("all");
+                  }}
+                >
+                  Clear Filters
+                </Button>
+              </>
+            )}
           </div>
         )}
 
