@@ -1,6 +1,6 @@
 # Pattern Genie 🌊
 
-Beautiful background patterns and wave-inspired designs for modern web development.
+Beautiful background patterns and magical designs for modern web development.
 
 ## ✨ Features
 

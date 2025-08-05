@@ -57,10 +57,10 @@ export const metadata: Metadata = {
     "collection of wave background snippets",
 
     // Brand and competition keywords
-    "pattern wave css",
-    "wave pattern generator",
-    "css wave backgrounds",
-    "ocean pattern css",
+    "pattern genie css",
+    "pattern genie generator",
+    "css magical backgrounds",
+    "magical pattern css",
     "blue wave patterns",
     "teal wave backgrounds",
     "cyan gradient patterns",
