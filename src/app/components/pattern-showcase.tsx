@@ -309,39 +309,39 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             <TabsList className="grid w-full grid-cols-6 max-w-4xl mx-auto bg-background/50 backdrop-blur-sm border shadow-lg rounded-xl p-1.5">
               <TabsTrigger 
                 value="all"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
                 All ({wavePatterns.length})
               </TabsTrigger>
               <TabsTrigger 
                 value="gradients"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
                 Gradients ({categoryStats.gradients || 0})
               </TabsTrigger>
               <TabsTrigger 
                 value="geometric"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
                 Geometric ({categoryStats.geometric || 0})
               </TabsTrigger>
               <TabsTrigger 
                 value="decorative"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
                 Decorative ({categoryStats.decorative || 0})
               </TabsTrigger>
               <TabsTrigger 
                 value="effects"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
                 Effects ({categoryStats.effects || 0})
               </TabsTrigger>
               <TabsTrigger 
                 value="favorites"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:scale-[1.02] transition-all duration-200 font-medium text-sm py-3 px-2 rounded-lg hover:bg-muted/80"
+                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
               >
-                <Star className="h-4 w-4 mr-1" />
+                <Star className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                 Favorites ({favorites.length})
               </TabsTrigger>
             </TabsList>

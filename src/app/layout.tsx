@@ -242,14 +242,13 @@ export default function RootLayout({
         >
           {children}
           <Toaster 
-            position="top-right"
+            position="bottom-right"
             offset={20}
             toastOptions={{
               style: {
                 background: 'hsl(var(--background))',
                 color: 'hsl(var(--foreground))',
                 border: '1px solid hsl(var(--border))',
-                marginTop: '80px',
               },
             }}
           />
