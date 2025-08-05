@@ -304,48 +304,50 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             )}
           </div>
 
-          {/* Category Filter Tabs */}
-          <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-            <TabsList className="grid w-full grid-cols-6 max-w-4xl mx-auto bg-background/50 backdrop-blur-sm border shadow-lg rounded-xl p-1.5">
-              <TabsTrigger 
-                value="all"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                All ({wavePatterns.length})
-              </TabsTrigger>
-              <TabsTrigger 
-                value="gradients"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                Gradients ({categoryStats.gradients || 0})
-              </TabsTrigger>
-              <TabsTrigger 
-                value="geometric"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                Geometric ({categoryStats.geometric || 0})
-              </TabsTrigger>
-              <TabsTrigger 
-                value="decorative"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                Decorative ({categoryStats.decorative || 0})
-              </TabsTrigger>
-              <TabsTrigger 
-                value="effects"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                Effects ({categoryStats.effects || 0})
-              </TabsTrigger>
-              <TabsTrigger 
-                value="favorites"
-                className="data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow-lg transition-all duration-200 font-medium text-xs sm:text-sm py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg hover:bg-muted/80 min-h-[36px] sm:min-h-[40px]"
-              >
-                <Star className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
-                Favorites ({favorites.length})
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
+          {/* Category Filter Tabs - Compact Design */}
+          <div className="w-full">
+            <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
+              <TabsList className="inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground w-full max-w-4xl mx-auto">
+                <TabsTrigger 
+                  value="all"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  All ({wavePatterns.length})
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="gradients"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  Gradients ({categoryStats.gradients || 0})
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="geometric"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  Geometric ({categoryStats.geometric || 0})
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="decorative"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  Decorative ({categoryStats.decorative || 0})
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="effects"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  Effects ({categoryStats.effects || 0})
+                </TabsTrigger>
+                <TabsTrigger 
+                  value="favorites"
+                  className="inline-flex items-center justify-center whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:shadow h-7 flex-1"
+                >
+                  <Star className="h-3 w-3 mr-1" />
+                  Favorites ({favorites.length})
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
         </div>
 
         {/* Results Count */}
