@@ -28,11 +28,11 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
         switch (e.key) {
           case 'k':
             e.preventDefault();
-            document.querySelector('input[aria-label="Search patterns"]')?.focus();
+            (document.querySelector('input[aria-label="Search patterns"]') as HTMLInputElement)?.focus();
             break;
           case '/':
             e.preventDefault();
-            document.querySelector('input[aria-label="Search patterns"]')?.focus();
+            (document.querySelector('input[aria-label="Search patterns"]') as HTMLInputElement)?.focus();
             break;
         }
       }
