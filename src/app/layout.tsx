@@ -7,7 +7,10 @@ import { ThemeProvider } from "./components/theme-provider";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://patternwave.dev"),
-  title: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
+  title: {
+    default: "Pattern Wave - Modern Background Patterns & Wave-Inspired Designs",
+    template: "%s | Pattern Wave",
+  },
   description:
     "Create stunning websites with our curated collection of 100+ modern CSS background patterns and wave-inspired gradients. Perfect for developers and designers. Copy, paste, and bring your designs to life with beautiful oceanic patterns.",
   keywords: [

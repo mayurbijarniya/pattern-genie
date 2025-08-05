@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Copy, Eye, Palette } from "lucide-react";
+import { memo } from "react";
 
 interface HeroProps {
   activePattern: string | null;
@@ -10,7 +11,7 @@ interface HeroProps {
   theme: "light" | "dark";
 }
 
-export default function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
+function Hero({ activePattern, setActivePattern, theme: _theme }: HeroProps) {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
       <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -102,3 +103,5 @@ export default function Hero({ activePattern, setActivePattern, theme: _theme }:
     </section>
   );
 }
+
+export default memo(Hero);
