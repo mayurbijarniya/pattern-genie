@@ -514,4 +514,55 @@ export const wavePatterns: Pattern[] = [
   {/* Your Content/Components */}
 </div>`,
   },
+  {
+    id: "tropical-lagoon",
+    name: "Tropical Lagoon",
+    category: "gradients",
+    description: "Warm tropical lagoon colors with turquoise waves",
+    style: {
+      background: "linear-gradient(45deg, #06b6d4 0%, #22d3ee 25%, #67e8f9 50%, #a5f3fc 75%, #cffafe 100%)",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Tropical Lagoon Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(45deg, #06b6d4 0%, #22d3ee 25%, #67e8f9 50%, #a5f3fc 75%, #cffafe 100%)",
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "wave-interference",
+    name: "Wave Interference",
+    category: "effects",
+    badge: "New",
+    description: "Intersecting wave patterns creating interference effects",
+    style: {
+      background: `
+        radial-gradient(ellipse at top left, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(8, 145, 178, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(34, 211, 238, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)
+      `,
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Wave Interference Background */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`
+        radial-gradient(ellipse at top left, rgba(14, 165, 233, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at top right, rgba(6, 182, 212, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(8, 145, 178, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(34, 211, 238, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)
+      \`,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
