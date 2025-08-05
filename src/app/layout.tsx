@@ -158,12 +158,8 @@ export const metadata: Metadata = {
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
-  alternates: {
-    canonical: "https://patternwave.dev",
-  },
+
+
   category: "technology",
   classification: "Web Design Tools",
 };
