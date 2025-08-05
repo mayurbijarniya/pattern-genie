@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -20,6 +20,31 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.ctrlKey || e.metaKey) {
+        switch (e.key) {
+          case 'k':
+            e.preventDefault();
+            document.querySelector('input[aria-label="Search patterns"]')?.focus();
+            break;
+          case '/':
+            e.preventDefault();
+            document.querySelector('input[aria-label="Search patterns"]')?.focus();
+            break;
+        }
+      }
+      if (e.key === 'Escape') {
+        setSearchTerm('');
+        setSelectedCategory('all');
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   // Filter patterns based on search and category
   const filteredPatterns = useMemo(() => {
