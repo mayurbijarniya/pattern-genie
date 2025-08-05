@@ -23,7 +23,7 @@ export default function NotFound() {
           <h2 className="text-6xl font-bold text-primary">404</h2>
           <h3 className="text-2xl font-semibold text-foreground">Wave Not Found</h3>
           <p className="text-muted-foreground">
-            The pattern you're looking for has drifted away. Let's navigate back to calmer waters.
+            The pattern you&apos;re looking for has drifted away. Let&apos;s navigate back to calmer waters.
           </p>
         </div>
 
