@@ -6,9 +6,7 @@ const nextConfig: NextConfig = {
   },
   poweredByHeader: false,
   compress: true,
-  experimental: {
-    optimizeCss: true,
-  },
+
   headers: async () => {
     return [
       {
