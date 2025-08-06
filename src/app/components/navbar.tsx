@@ -59,7 +59,7 @@ export default function Navbar({ theme }: NavbarProps) {
               />
             </a>
             <a
-              href="https://github.com/mayurbijarniya"
+              href="https://github.com/mayurbijarniya/pattern-genie"
               target="_blank"
               rel="noopener noreferrer"
               className={`rounded-full p-1.5 sm:p-2 transition-all duration-300 ${isPatternDark ? "hover:bg-white/10" : "hover:bg-neutral-100 dark:hover:bg-neutral-800"

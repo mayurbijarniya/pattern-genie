@@ -2,7 +2,7 @@
 
 > A beautiful collection of 130+ modern CSS background patterns and magical designs for web developers.
 
-**Live Demo:** [View on Vercel](https://pattern-genie.vercel.app)
+**Live Demo:** [View Live](https://patterngenie.mayur.app)
 
 ## ✨ Features
 

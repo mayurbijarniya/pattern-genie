@@ -6,7 +6,7 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "./components/theme-provider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://patterngenie.dev"),
+  metadataBase: new URL("https://patterngenie.mayur.app"),
   title: {
     default: "Pattern Genie - Modern Background Patterns & Magical Designs",
     template: "%s | Pattern Genie",
@@ -119,7 +119,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://patterngenie.dev",
+    url: "https://patterngenie.mayur.app",
     title: "Pattern Genie - Modern Background Patterns & Magical Designs",
     description:
       "Create stunning websites with our curated collection of 130+ modern CSS background patterns and magical gradients. Perfect for developers and designers.",
@@ -202,9 +202,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              "name": "Pattern Wave",
-              "description": "Create stunning websites with our curated collection of modern CSS background patterns and wave-inspired gradients.",
-              "url": "https://patternwave.dev",
+              "name": "Pattern Genie",
+              "description": "Create stunning websites with our curated collection of modern CSS background patterns and magical gradients.",
+              "url": "https://patterngenie.mayur.app",
               "applicationCategory": "DesignApplication",
               "operatingSystem": "Any",
               "offers": {
@@ -238,13 +238,13 @@ export default function RootLayout({
         >
           {children}
           <Toaster 
-            position="bottom-right"
+            position="bottom-left"
             offset={20}
             toastOptions={{
               style: {
-                background: 'hsl(var(--background))',
-                color: 'hsl(var(--foreground))',
-                border: '1px solid hsl(var(--border))',
+                background: '#ffffff',
+                color: '#000000',
+                border: '1px solid #e5e5e5',
                 boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
                 opacity: '1',
               },
