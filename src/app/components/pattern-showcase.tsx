@@ -291,7 +291,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               placeholder="Search magical patterns..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-12 py-3 border border-border rounded-xl bg-background/50 backdrop-blur-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-black focus:border-black shadow-lg transition-all duration-300"
+              className="w-full pl-12 pr-12 py-3 border border-border dark:border-gray-600 rounded-xl bg-background/50 backdrop-blur-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-black dark:focus:border-white shadow-lg transition-all duration-300"
               aria-label="Search patterns"
             />
             {searchTerm && (
