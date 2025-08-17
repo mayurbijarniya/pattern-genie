@@ -3236,14 +3236,14 @@ export const wavePatterns: Pattern[] = [
 </div>`,
   },
   {
-  id: "pastel-wave",
-  name: "Pastel Wave",
-  category: "effects",
-  badge: "New",
-  style: {
-    background: "linear-gradient(120deg, #d5c5ff 0%, #a7f3d0 50%, #f0f0f0 100%)",
-  },
-  code: `<div className="min-h-screen w-full bg-white relative">
+    id: "pastel-wave",
+    name: "Pastel Wave",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "linear-gradient(120deg, #d5c5ff 0%, #a7f3d0 50%, #f0f0f0 100%)",
+    },
+    code: `<div className="min-h-screen w-full bg-white relative">
   {/* Pastel Wave */}
   <div
     className="absolute inset-0 z-0"
@@ -3253,5 +3253,213 @@ export const wavePatterns: Pattern[] = [
   />
   {/* Your Content/Components */}
 </div>`,
-},
+  },
+  {
+    id: "aurora-dream-corner-whispers",
+    name: "Aurora Dream Corner Whispers",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "#f7eaff",
+      backgroundImage: `
+        radial-gradient(ellipse 85% 65% at 8% 8%, rgba(175, 109, 255, 0.42), transparent 60%),
+        radial-gradient(ellipse 75% 60% at 75% 35%, rgba(255, 235, 170, 0.55), transparent 62%),
+        radial-gradient(ellipse 70% 60% at 15% 80%, rgba(255, 100, 180, 0.40), transparent 62%),
+        radial-gradient(ellipse 70% 60% at 92% 92%, rgba(120, 190, 255, 0.45), transparent 62%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)
+      `,
+      backgroundSize: "100% 100%",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Aurora Dream Corner Whispers */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`radial-gradient(ellipse 85% 65% at 8% 8%, rgba(175, 109, 255, 0.42), transparent 60%),
+        radial-gradient(ellipse 75% 60% at 75% 35%, rgba(255, 235, 170, 0.55), transparent 62%),
+        radial-gradient(ellipse 70% 60% at 15% 80%, rgba(255, 100, 180, 0.40), transparent 62%),
+        radial-gradient(ellipse 70% 60% at 92% 92%, rgba(120, 190, 255, 0.45), transparent 62%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)\`,
+    }}
+  />
+  {/* Your content goes here */}
+</div>`,
+  },
+  {
+    id: "aurora-dream-soft-harmony",
+    name: "Aurora Dream Soft Harmony",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "#f7eaff",
+      backgroundImage: `
+        radial-gradient(ellipse 80% 60% at 60% 20%, rgba(175, 109, 255, 0.50), transparent 65%),
+        radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.45), transparent 65%),
+        radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 235, 170, 0.43), transparent 62%),
+        radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.48), transparent 68%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)
+      `,
+      backgroundSize: "100% 100%",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Aurora Dream Soft Harmony */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`radial-gradient(ellipse 80% 60% at 60% 20%, rgba(175, 109, 255, 0.50), transparent 65%),
+        radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.45), transparent 65%),
+        radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 235, 170, 0.43), transparent 62%),
+        radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.48), transparent 68%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)\`,
+    }}
+  />
+  {/* Your content goes here */}
+</div>`,
+  },
+  {
+    id: "aurora-dream-diagonal-flow",
+    name: "Aurora Dream Diagonal Flow",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "#f7eaff",
+      backgroundImage: `
+        radial-gradient(ellipse 80% 60% at 5% 40%, rgba(175, 109, 255, 0.48), transparent 67%),
+        radial-gradient(ellipse 70% 60% at 45% 45%, rgba(255, 100, 180, 0.41), transparent 67%),
+        radial-gradient(ellipse 62% 52% at 83% 76%, rgba(255, 235, 170, 0.44), transparent 63%),
+        radial-gradient(ellipse 60% 48% at 75% 20%, rgba(120, 190, 255, 0.36), transparent 66%),
+        linear-gradient(45deg, #f7eaff 0%, #fde2ea 100%)
+      `,
+      backgroundSize: "100% 100%",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Aurora Dream Diagonal Flow */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`radial-gradient(ellipse 80% 60% at 5% 40%, rgba(175, 109, 255, 0.48), transparent 67%),
+        radial-gradient(ellipse 70% 60% at 45% 45%, rgba(255, 100, 180, 0.41), transparent 67%),
+        radial-gradient(ellipse 62% 52% at 83% 76%, rgba(255, 235, 170, 0.44), transparent 63%),
+        radial-gradient(ellipse 60% 48% at 75% 20%, rgba(120, 190, 255, 0.36), transparent 66%),
+        linear-gradient(45deg, #f7eaff 0%, #fde2ea 100%)\`,
+    }}
+  />
+  {/* Your content goes here */}
+</div>`,
+  },
+  {
+    id: "aurora-dream-vivid-bloom",
+    name: "Aurora Dream Vivid Bloom",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "#f7eaff",
+      backgroundImage: `
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(175, 109, 255, 0.85), transparent 68%),
+        radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.75), transparent 68%),
+        radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 235, 170, 0.98), transparent 68%),
+        radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.3), transparent 68%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)
+      `,
+      backgroundSize: "100% 100%",
+    },
+    code: `<div className="min-h-screen w-full relative">
+  {/* Aurora Dream Vivid Bloom */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: \`radial-gradient(ellipse 80% 60% at 70% 20%, rgba(175, 109, 255, 0.85), transparent 68%),
+        radial-gradient(ellipse 70% 60% at 20% 80%, rgba(255, 100, 180, 0.75), transparent 68%),
+        radial-gradient(ellipse 60% 50% at 60% 65%, rgba(255, 235, 170, 0.98), transparent 68%),
+        radial-gradient(ellipse 65% 40% at 50% 60%, rgba(120, 190, 255, 0.3), transparent 68%),
+        linear-gradient(180deg, #f7eaff 0%, #fde2ea 100%)\`,
+    }}
+  />
+  {/* Your content goes here */}
+</div>`,
+  },
+  {
+    id: "midnight-ember",
+    name: "Midnight Ember",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "radial-gradient(ellipse at center, #3d2914 0%, #2a1810 30%, #1a0f0a 60%, #0d0806 100%)",
+    },
+    code: `<div className="min-h-screen w-full bg-white relative">
+  {/* Midnight Ember */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(ellipse at center, #3d2914 0%, #2a1810 30%, #1a0f0a 60%, #0d0806 100%)"
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "deep-ocean-glow",
+    name: "Deep Ocean Glow",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "radial-gradient(70% 55% at 50% 50%, #2a5d77 0%, #184058 18%, #0f2a43 34%, #0a1b30 50%, #071226 66%, #040d1c 80%, #020814 92%, #01040d 97%, #000309 100%), radial-gradient(160% 130% at 10% 10%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%), radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%)",
+    },
+    code: `<div className="min-h-screen w-full bg-black relative">
+  {/* Deep Ocean Glow */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(70% 55% at 50% 50%, #2a5d77 0%, #184058 18%, #0f2a43 34%, #0a1b30 50%, #071226 66%, #040d1c 80%, #020814 92%, #01040d 97%, #000309 100%), radial-gradient(160% 130% at 10% 10%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%), radial-gradient(160% 130% at 90% 90%, rgba(0,0,0,0) 38%, #000309 76%, #000208 100%)"
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "cosmic-noise",
+    name: "Cosmic Noise",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, transparent 40%), linear-gradient(120deg, #0f0e17 0%, #1a1b26 100%)",
+    },
+    code: `<div className="min-h-screen w-full bg-black relative">
+  {/* Cosmic Noise */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0%, transparent 40%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, transparent 40%), linear-gradient(120deg, #0f0e17 0%, #1a1b26 100%)"
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
+  {
+    id: "crimson-core-glow",
+    name: "Crimson Core Glow",
+    category: "effects",
+    badge: "New",
+    style: {
+      background: "linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #7d1a2f 32%, #591828 46%, #3c1722 60%, #2a151d 72%, #1f1317 84%, #141013 94%, #0a0a0a 100%), radial-gradient(90% 75% at 50% 50%, rgba(228,42,66,0.06) 0%, rgba(228,42,66,0) 55%), radial-gradient(150% 120% at 8% 8%, rgba(0,0,0,0) 42%, #0b0a0a 82%, #070707 100%), radial-gradient(150% 120% at 92% 92%, rgba(0,0,0,0) 42%, #0b0a0a 82%, #070707 100%), radial-gradient(60% 50% at 50% 60%, rgba(240,60,80,0.06), rgba(0,0,0,0) 60%), #050505",
+    },
+    code: `<div className="min-h-screen w-full bg-black relative">
+  {/* Crimson Core Glow */}
+  <div
+    className="absolute inset-0 z-0"
+    style={{
+      background: "linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #7d1a2f 32%, #591828 46%, #3c1722 60%, #2a151d 72%, #1f1317 84%, #141013 94%, #0a0a0a 100%), radial-gradient(90% 75% at 50% 50%, rgba(228,42,66,0.06) 0%, rgba(228,42,66,0) 55%), radial-gradient(150% 120% at 8% 8%, rgba(0,0,0,0) 42%, #0b0a0a 82%, #070707 100%), radial-gradient(150% 120% at 92% 92%, rgba(0,0,0,0) 42%, #0b0a0a 82%, #070707 100%), radial-gradient(60% 50% at 50% 60%, rgba(240,60,80,0.06), rgba(0,0,0,0) 60%), #050505"
+    }}
+  />
+  {/* Soft vignette to blend edges */}
+  <div
+    className="absolute inset-0 z-0 pointer-events-none"
+    style={{
+      backgroundImage: "radial-gradient(circle at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.5) 100%)",
+      opacity: 0.95,
+    }}
+  />
+  {/* Your Content/Components */}
+</div>`,
+  },
 ];
