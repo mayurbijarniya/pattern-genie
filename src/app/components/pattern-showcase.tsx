@@ -67,7 +67,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
   // Toggle favorite function
   const toggleFavorite = (patternId: string) => {
     setFavorites(prev => 
-      prev.includes(patternId) 
+      prev.includes(patternId)
         ? prev.filter(id => id !== patternId)
         : [...prev, patternId]
     );
@@ -79,7 +79,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
       const matchesSearch = pattern.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            (pattern.description?.toLowerCase().includes(searchTerm.toLowerCase()) ?? false);
       let matchesCategory = false;
-      
+
       if (selectedCategory === "all") {
         matchesCategory = true;
       } else if (selectedCategory === "favorites") {
@@ -87,7 +87,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
       } else {
         matchesCategory = pattern.category === selectedCategory;
       }
-      
+
       return matchesSearch && matchesCategory;
     });
   }, [searchTerm, selectedCategory, favorites]);
@@ -124,116 +124,70 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
 
   const PatternCard = ({ pattern }: { pattern: Pattern }) => {
     const isActive = _activePattern === pattern.id;
-    
+
     return (
-    <div className="group relative">
-      <div
-        className={`relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-background shadow-sm transition-all duration-300 ${
-          isActive 
-            ? "ring-2 ring-black dark:ring-white ring-offset-2 scale-[1.02] shadow-xl" 
-            : "hover:shadow-xl hover:scale-[1.02]"
-        }`}
-        onClick={() => previewPattern(pattern)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === 'Enter' && previewPattern(pattern)}
-        aria-label={`Preview ${pattern.name} pattern`}
-      >
-        {/* Pattern Background */}
-        <div 
-          className="absolute inset-0 w-full h-full"
-          style={pattern.style}
-        />
-
-        {/* Favorite Star Button (top-left) */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            toggleFavorite(pattern.id);
-          }}
-          className={`absolute top-3 left-3 z-10 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 border ${
-            favorites.includes(pattern.id)
-              ? "bg-yellow-500/20 border-yellow-400/30 text-yellow-400"
-              : "bg-black/20 border-white/30 text-white hover:bg-black/30 hover:border-white/40"
+      <div className="group relative">
+        <div
+          className={`relative aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-background shadow-sm transition-all duration-300 ${
+            isActive
+              ? "ring-2 ring-black dark:ring-white ring-offset-2 scale-[1.02] shadow-xl"
+              : "hover:shadow-xl hover:scale-[1.02]"
           }`}
-          title={favorites.includes(pattern.id) ? "Remove from favorites" : "Add to favorites"}
+          onClick={() => previewPattern(pattern)}
+          role="button"
+          tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && previewPattern(pattern)}
+          aria-label={`Preview ${pattern.name} pattern`}
         >
-          <Star
-            className={`h-4 w-4 transition-all duration-200 ${
-              favorites.includes(pattern.id) ? "fill-current scale-110" : ""
-            }`}
+          {/* Pattern Background */}
+          <div
+            className="absolute inset-0 w-full h-full"
+            style={pattern.style}
           />
-        </button>
 
-        {/* Pattern Craft Style Badge */}
-        {pattern.badge && (
-          <div className="absolute top-3 right-3 z-10">
-            <Badge className="gap-1 text-xs bg-background/80 backdrop-blur-sm border-border/50 px-2 py-1 text-foreground">
-              <Sparkles className="h-2.5 w-2.5 text-violet-600" />
-              <span>{pattern.badge}</span>
-            </Badge>
-          </div>
-        )}
-
-        {/* Mobile: Bottom action bar */}
-        <div className="sm:hidden absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
-          <div className="flex gap-2">
-            <Button
-              size="sm" 
-              className="flex-1 bg-white text-black hover:bg-gray-100 border-0 shadow-lg font-medium text-xs h-8"
-              onClick={(e) => {
-                e.stopPropagation();
-                previewPattern(pattern);
-              }}
-            >
-              <Eye className="h-3 w-3 mr-1" />
-              Preview
-            </Button>
-            <Button
-              size="sm"
-              onClick={(e) => {
-                e.stopPropagation();
-                copyToClipboard(pattern);
-              }}
-              className={`flex-1 border-0 text-xs h-8 ${copiedId === pattern.id
-                ? "bg-green-600 hover:bg-green-700 text-white"
-                : "bg-gray-900/90 hover:bg-gray-900 text-white"
+          {/* Favorite Star Button (top-left) */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleFavorite(pattern.id);
+            }}
+            className={`absolute top-3 left-3 z-10 w-8 h-8 rounded-full backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 border ${
+              favorites.includes(pattern.id)
+                ? "bg-yellow-500/20 border-yellow-400/30 text-yellow-400"
+                : "bg-black/20 border-white/30 text-white hover:bg-black/30 hover:border-white/40"
+            }`}
+          title={favorites.includes(pattern.id) ? "Remove from favorites" : "Add to favorites"}
+          >
+            <Star
+              className={`h-4 w-4 transition-all duration-200 ${
+                favorites.includes(pattern.id) ? "fill-current scale-110" : ""
               }`}
-              disabled={copiedId === pattern.id}
-            >
-              {copiedId === pattern.id ? (
-                <>
-                  <Check className="h-3 w-3 mr-1" />
-                  Copied!
-                </>
-              ) : (
-                <>
-                  <Copy className="h-3 w-3 mr-1" />
-                  Copy
-                </>
-              )}
-            </Button>
-          </div>
-        </div>
+            />
+          </button>
 
-        {/* Desktop: Enhanced hover overlay */}
-        <div className="hidden sm:flex absolute inset-0 cursor-pointer bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 items-center justify-center p-4">
-          <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            <h3 className="text-white font-bold text-sm lg:text-base mb-4 drop-shadow-lg">
-              {pattern.name}
-            </h3>
-            <div className="flex flex-col gap-3 w-full">
+          {/* Pattern Craft Style Badge */}
+          {pattern.badge && (
+            <div className="absolute top-3 right-3 z-10">
+              <Badge className="gap-1 text-xs bg-background/80 backdrop-blur-sm border-border/50 px-2 py-1 text-foreground">
+                <Sparkles className="h-2.5 w-2.5 text-violet-600" />
+                <span>{pattern.badge}</span>
+              </Badge>
+            </div>
+          )}
+
+          {/* Mobile: Bottom action bar */}
+          <div className="sm:hidden absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/90 to-transparent">
+            <div className="flex gap-2">
               <Button
                 size="sm"
-                variant="secondary"
+                className="flex-1 bg-white text-black hover:bg-gray-100 border-0 shadow-lg font-medium text-xs h-8"
                 onClick={(e) => {
                   e.stopPropagation();
                   previewPattern(pattern);
                 }}
-                className="cursor-pointer shadow-xl backdrop-blur-md bg-white/95 hover:bg-white text-black border-0 transition-all duration-200 hover:scale-105 font-semibold"
               >
-                <Eye className="h-4 w-4 mr-2" />
-                {isActive ? "Hide Preview" : "Preview Magic"}
+                <Eye className="h-3 w-3 mr-1" />
+                Preview
               </Button>
               <Button
                 size="sm"
@@ -241,31 +195,77 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
                   e.stopPropagation();
                   copyToClipboard(pattern);
                 }}
-                className={`cursor-pointer shadow-xl backdrop-blur-md border-0 transition-all duration-200 hover:scale-105 font-semibold ${copiedId === pattern.id
-                  ? "bg-green-600/90 hover:bg-green-600 text-white"
-                  : "bg-gray-900/90 hover:bg-gray-900 text-white"
+              className={`flex-1 border-0 text-xs h-8 ${copiedId === pattern.id
+                    ? "bg-green-600 hover:bg-green-700 text-white"
+                    : "bg-gray-900/90 hover:bg-gray-900 text-white"
                 }`}
                 disabled={copiedId === pattern.id}
               >
                 {copiedId === pattern.id ? (
                   <>
-                    <Check className="h-4 w-4 mr-2" />
-                    Copied! 🎉
+                    <Check className="h-3 w-3 mr-1" />
+                    Copied!
                   </>
                 ) : (
                   <>
-                    <Copy className="h-4 w-4 mr-2" />
-                    Copy Code ✨
+                    <Copy className="h-3 w-3 mr-1" />
+                    Copy
                   </>
                 )}
               </Button>
             </div>
           </div>
+
+          {/* Desktop: Enhanced hover overlay */}
+          <div className="hidden sm:flex absolute inset-0 cursor-pointer bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 items-center justify-center p-4">
+            <div className="text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="text-white font-bold text-sm lg:text-base mb-4 drop-shadow-lg">
+                {pattern.name}
+              </h3>
+              <div className="flex flex-col gap-3 w-full">
+                <Button
+                  size="sm"
+                  variant="secondary"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    previewPattern(pattern);
+                  }}
+                  className="cursor-pointer shadow-xl backdrop-blur-md bg-white/95 hover:bg-white text-black border-0 transition-all duration-200 hover:scale-105 font-semibold"
+                >
+                  <Eye className="h-4 w-4 mr-2" />
+                  {isActive ? "Hide Preview" : "Preview Magic"}
+                </Button>
+                <Button
+                  size="sm"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    copyToClipboard(pattern);
+                  }}
+                className={`cursor-pointer shadow-xl backdrop-blur-md border-0 transition-all duration-200 hover:scale-105 font-semibold ${copiedId === pattern.id
+                      ? "bg-green-600/90 hover:bg-green-600 text-white"
+                      : "bg-gray-900/90 hover:bg-gray-900 text-white"
+                  }`}
+                  disabled={copiedId === pattern.id}
+                >
+                  {copiedId === pattern.id ? (
+                    <>
+                      <Check className="h-4 w-4 mr-2" />
+                      Copied! 🎉
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="h-4 w-4 mr-2" />
+                      Copy Code ✨
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
   return (
     <section id="pattern-showcase" className="relative py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
@@ -283,9 +283,9 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
 
         {/* Search and Filter */}
         <div className="mb-8 space-y-4">
-                    {/* Enhanced Search Bar */}
+          {/* Enhanced Search Bar */}
           <div className="relative max-w-lg mx-auto">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-600 dark:text-gray-300 z-10" />
             <input
               type="text"
               placeholder="Search magical patterns..."
@@ -297,7 +297,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
             {searchTerm && (
               <button
                 onClick={() => setSearchTerm("")}
-                className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground hover:text-foreground transition-colors"
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-100 transition-colors z-10"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -325,7 +325,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
                   }}
                 />
               )}
-              
+
               {/* Tab buttons with enhanced animations */}
               <motion.button
                 onClick={() => setSelectedCategory('all')}
@@ -340,7 +340,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               >
                 All ({wavePatterns.length})
               </motion.button>
-              
+
               <motion.button
                 onClick={() => setSelectedCategory('gradients')}
                 className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
@@ -354,7 +354,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               >
                 Gradients ({categoryStats.gradients || 0})
               </motion.button>
-              
+
               <motion.button
                 onClick={() => setSelectedCategory('geometric')}
                 className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
@@ -368,7 +368,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               >
                 Geometric ({categoryStats.geometric || 0})
               </motion.button>
-              
+
               <motion.button
                 onClick={() => setSelectedCategory('decorative')}
                 className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
@@ -382,7 +382,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               >
                 Decorative ({categoryStats.decorative || 0})
               </motion.button>
-              
+
               <motion.button
                 onClick={() => setSelectedCategory('effects')}
                 className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
@@ -396,7 +396,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
               >
                 Effects ({categoryStats.effects || 0})
               </motion.button>
-              
+
               <motion.button
                 onClick={() => setSelectedCategory('favorites')}
                 className={`relative z-10 inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium h-9 min-w-0 flex-1 ${
