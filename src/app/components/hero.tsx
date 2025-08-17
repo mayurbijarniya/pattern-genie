@@ -42,7 +42,7 @@ export default function Hero({ theme }: HeroProps) {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </div>
-              <span className="font-medium">130+ New Patterns</span>
+              <span className="font-medium">8+ New Patterns</span>
               <Zap className="h-3 w-3 text-orange-500" />
               <span className="hidden sm:inline-flex items-center">
                 Read More
@@ -208,7 +208,7 @@ export default function Hero({ theme }: HeroProps) {
                 isPatternDark ? "text-white" : ""
               }`}
             >
-              130+
+              100+
             </div>
             <div
               className={`text-xs sm:text-sm transition-colors duration-300 ${
