@@ -7,7 +7,6 @@
 ## ✨ Features
 
 🎨 **130+ Premium Patterns** - Curated collection of modern backgrounds  
-🌟 **Magical Designs** - Pattern Craft inspired with enhanced UX  
 📋 **One-Click Copy** - Instant code copying for quick implementation  
 📱 **Fully Responsive** - Perfect on desktop, tablet, and mobile  
 ⭐ **Favorites System** - Save your favorite patterns with localStorage  
@@ -75,7 +74,6 @@ pattern-genie/
 
 ## 🌟 Key Improvements
 
-✅ **Better than Pattern Craft** - Enhanced UX and modern design  
 ✅ **Favorites functionality** - Save patterns locally  
 ✅ **Responsive 4-column grid** - Optimal for all screen sizes  
 ✅ **Smart notifications** - Clean, non-intrusive feedback  
