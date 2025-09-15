@@ -168,7 +168,7 @@ export default function PatternShowcase({ activePattern: _activePattern, setActi
           {/* Pattern Craft Style Badge */}
           {pattern.badge && (
             <div className="absolute top-3 right-3 z-10">
-              <Badge className="gap-1 text-xs bg-background/80 backdrop-blur-sm border-border/50 px-2 py-1 text-foreground">
+              <Badge variant="outline" className="gap-1 text-xs bg-background/80 backdrop-blur-sm border-border/50 px-2 py-1 text-foreground hover:bg-transparent">
                 <Sparkles className="h-2.5 w-2.5 text-violet-600" />
                 <span>{pattern.badge}</span>
               </Badge>
