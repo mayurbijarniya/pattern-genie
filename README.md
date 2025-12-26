@@ -1,28 +1,28 @@
-# 🔮 Pattern Genie
+# Pattern Genie
 
 > A beautiful collection of 130+ modern CSS background patterns and magical designs for web developers.
 
 **Live Demo:** [View Live](https://patterngenie.mayur.app)
 
-## ✨ Features
+## Features
 
-🎨 **130+ Premium Patterns** - Curated collection of modern backgrounds  
-📋 **One-Click Copy** - Instant code copying for quick implementation  
-📱 **Fully Responsive** - Perfect on desktop, tablet, and mobile  
-⭐ **Favorites System** - Save your favorite patterns with localStorage  
-🔍 **Smart Search** - Find patterns quickly with real-time filtering  
-🏷️ **Category Tabs** - Organized by gradients, geometric, decorative, effects  
-🌗 **Auto Theme** - Smart dark/light mode based on pattern colors  
-🎯 **4-Column Grid** - Optimized layout for pattern browsing  
+**130+ Premium Patterns** - Curated collection of modern backgrounds  
+**One-Click Copy** - Instant code copying for quick implementation  
+**Fully Responsive** - Perfect on desktop, tablet, and mobile  
+**Favorites System** - Save your favorite patterns with localStorage  
+**Smart Search** - Find patterns quickly with real-time filtering  
+**Category Tabs** - Organized by gradients, geometric, decorative, effects  
+**Auto Theme** - Smart dark/light mode based on pattern colors  
+**4-Column Grid** - Optimized layout for pattern browsing  
 
-## 🚀 Quick Start
+## Quick Start
 
-1. **Browse** → Explore 130+ beautiful patterns
-2. **Preview** → Click any pattern to see it live
-3. **Copy** → One-click code copying
-4. **Paste** → Use in your project instantly!
+1. **Browse** - Explore 130+ beautiful patterns
+2. **Preview** - Click any pattern to see it live
+3. **Copy** - One-click code copying
+4. **Paste** - Use in your project instantly!
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Next.js 15** - React framework with App Router
 - **React 19** - Latest React with concurrent features
@@ -31,7 +31,7 @@
 - **shadcn/ui** - Beautiful component library
 - **Lucide React** - Crisp icons
 
-## 💻 Development
+## Development
 
 ```bash
 # Clone the repository
